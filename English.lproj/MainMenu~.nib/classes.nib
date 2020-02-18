@@ -1,0 +1,56 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                bringUp = id; 
+                fixGlobalHotKey = id; 
+                openMonocleWebsite = id; 
+                searchWithClipboard = id; 
+                showPrefs = id; 
+            }; 
+            CLASS = MonocleController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {searchView = MonocleSearchView; statusItem = MonocleStatusItem; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = MonocleSearchField; LANGUAGE = ObjC; SUPERCLASS = NSSearchField; }, 
+        {
+            ACTIONS = {doSearch = id; }; 
+            CLASS = MonocleSearchView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                appMenu = NSMenu; 
+                appMenuPopup = NSPopUpButton; 
+                controlledEngines = NSArrayController; 
+                iconView = NSImageView; 
+                searchHelpTable = NSTableView; 
+                searchHelpView = NSView; 
+                searchHelpWebView = WebView; 
+                selectedEngine = NSObjectController; 
+                textField = MonocleSearchField; 
+            }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            CLASS = MonocleStatusItem; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {monocleController = MonocleController; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = MonocleStatusItemView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            CLASS = MonocleWashView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {monoclePreferenceController = MonoclePreferenceController; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            ACTIONS = {checkForUpdates = id; }; 
+            CLASS = SUUpdater; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

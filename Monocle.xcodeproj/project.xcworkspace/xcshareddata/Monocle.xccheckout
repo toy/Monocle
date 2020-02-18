@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>57B67A47-8F49-4ED1-8CBD-1AB408AA2506</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Monocle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>56AC0353-AF68-43BC-913A-AA8671C0468F</key>
+		<string>file:///Users/jesper/svn-repo</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Monocle.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>56AC0353-AF68-43BC-913A-AA8671C0468F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>56AC0353-AF68-43BC-913A-AA8671C0468F</key>
+		<string>file:///Users/jesper/svn-repo</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>file:///Users/jesper/svn-repo/Monocle.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>56AC0353-AF68-43BC-913A-AA8671C0468F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>56AC0353-AF68-43BC-913A-AA8671C0468F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Monocle</string>
+		</dict>
+	</array>
+</dict>
+</plist>

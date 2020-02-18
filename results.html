@@ -1,0 +1,880 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html>
+  <head>
+    <title>Monocle search helpers display</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="json.js"></script>
+    <script>
+  
+	// http://binnyva.blogspot.com/2005/10/dump-function-javascript-equivalent-of.html  
+	/**
+	* Function : dump()
+	* Arguments: The data - array,hash(associative array),object
+	*    The level - OPTIONAL
+	* Returns  : The textual representation of the array.
+	* This function was inspired by the print_r function of PHP.
+	* This will accept some data as the argument and return a
+	* text that will be a more readable version of the
+	* array/hash/object that is given.
+	*/
+	function dump(arr,level) {
+	  var dumped_text = "";
+	  if(!level) level = 0;
+	  
+	  //The padding given at the beginning of the line.
+	  var level_padding = "";
+	  for(var j=0;j<level+1;j++) level_padding += "    ";
+	  
+	  if(typeof(arr) == 'object') { //Array/Hashes/Objects
+	    for(var item in arr) {
+	      var value = arr[item];
+	      
+	      if(typeof(value) == 'object') { //If it is an array,
+	        dumped_text += level_padding + "'" + item + "' ...\n";
+	        dumped_text += dump(value,level+1);
+	      } else {
+	        dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+	      }
+	    }
+	  } else { //Stings/Chars/Numbers etc.
+	    dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
+	  }
+	  return dumped_text;
+	} 
+
+
+    
+    
+        function $(id) { return document.getElementById(id); }
+    
+        var currResults = {};
+        var currResultChoices = [];
+        var currSelection = null;
+        var currSelectionElement = null;
+        
+        var allProviders = null;
+        var lastChildOfProvider = {};
+        
+        var updatingInterval = null;
+        var updatingString = null;
+        var currSearchText = null;
+        var currCISearchText = null;
+        var updatingUnderway = false;
+        
+        var frontier = null;
+        var frontierup = null;
+        
+        function reallyUpdateResultsList() {
+        
+        	var selectionToRetain = null;
+        	var toSelect = null;
+        	var selectionProvider = null;
+        
+        	if (currSelection != null) {
+        		ma("previous selection exists");
+        		selectionToRetain = currCISearchText;
+        		var prevSelection = currResults[currSelection];
+        		ma("prevSelection=" + dump(prevSelection));
+        		ma("curr search text: " + currSearchText);
+        		if ((prevSelection != null) && (prevSelection['provider'] != undefined)) {
+        			selectionProvider = prevSelection['provider'];
+        		}
+        	}
+        
+//            alert("really updating");
+            var str = updatingString+'';
+            var resultsdict = str.parseJSON();
+            var results = resultsdict['results'];
+            var provider = null;
+            var provideridentifier = null;
+            var i = 0;
+            var div = document.createElement('div');
+            div.setAttribute('class', 'actualResults');
+            div.setAttribute('id', 'actualResults');
+            var ele = null;
+            var xi = 0;
+//            alert("really updating2");
+			var firstProvider = true;
+			
+			currResultChoices = [];
+			currSelection = null;
+			currSelectionElement = null;
+			
+			allProviders = [];
+			lastChildOfProvider = {};
+			
+			var firstInProvider = true;
+			
+			var doesStringMeanResultsLabel = true;
+            for(xi = 0; xi < results.length; xi++) {
+                var res = results[xi];
+                if (typeof res == 'string') {
+                	if (doesStringMeanResultsLabel) {
+	                    provider = res;
+	                    ele = document.createElement('h3');
+	                    allProviders.push(provider);
+	                    if (firstProvider) {
+	                    	ele.setAttribute('class', 'first');
+	                    	firstProvider = false;
+	                    }
+	                    firstInProvider = true;
+	                    ele.setAttribute('id', 'provider-'+(allProviders.length-1));
+	                    ele.appendChild(document.createTextNode(res));
+                    } else {
+                    	provideridentifier = res;
+                    }
+                    doesStringMeanResultsLabel = false;
+                } else {
+	                doesStringMeanResultsLabel = true;
+                    res['provider'] = provider;
+                    res['providerIdentifier'] = provideridentifier;
+                    ele = document.createElement('div');
+                    if (res['suggestion'] != undefined) {
+                    	if (selectionToRetain == res['suggestion'] && ((selectionProvider != null && selectionProvider == provider) || (selectionProvider == null && toSelect != null))) {
+                    		toSelect = 'r'+i;
+                    		ma("selecting " + toSelect);
+                    	}
+                    
+                        ele.setAttribute('class', 'suggestion'+(firstInProvider ? ' first' : ''));
+                        ele.setAttribute('id', 'suggestion-' + i);
+						
+						var sugg = document.createElement('p');
+						sugg.appendChild(document.createTextNode(res['suggestion']));
+						
+                        ele.appendChild(sugg);
+                    } else {
+                    
+                    	ele.setAttribute('class', 'result'+(firstInProvider ? ' first' : ''));
+                        ele.setAttribute('id', 'result-' + i);
+                        
+                        var title = document.createElement('h4');
+						title.setAttribute('class', 'title');
+                        title.appendChild(document.createTextNode(res['title']+' '));
+                        
+                        if (res['description'].length > 0) {                    
+                            var desc = document.createElement('h4');
+							desc.setAttribute('class', 'description');
+                            desc.appendChild(document.createTextNode(res['description']));
+                            
+                            ele.appendChild(desc);
+                        }
+                        
+                        var loc = document.createElement('div');
+                        loc.appendChild(document.createTextNode(res['location']));
+                        
+                        
+                        title.appendChild(loc);
+                        
+                        ele.appendChild(title);
+                    }
+                    firstInProvider = false;
+					lastChildOfProvider[provider] = ele.getAttribute('id');
+                    currResults['r'+i] = res;
+                    currResultChoices.push('r'+i);
+                    i++;
+                }
+//	            var br = document.createElement('br');
+//    	        br.setAttribute('class', 'breaking');
+//            	ele.appendChild(br);
+                div.appendChild(ele);
+            }
+            noResults = (i == 0);
+            if (!noResults) {
+            	var instr = null; /*"Search using <b>Wikipedia</b> with <strong>&#8997;&#8617;</strong><br />Follow suggestions with <strong>&#8617;</strong>";*/
+            	var instrnull = null;
+				if (window.monocle) {
+					instr = window.monocle.getInstructionsInnerHTML();
+					instrnull = window.monocle.getInstructionsInnerHTMLNonSelection();
+				}
+				var instrel = document.createElement('div');
+				instrel.setAttribute('id', 'instructions-nullselection');
+				instrel.innerHTML = instrnull;
+				
+				div.insertBefore(instrel, div.firstChild);
+				var instrel = document.createElement('div');
+				instrel.setAttribute('id', 'instructions-selection');
+				instrel.innerHTML = instr;
+				
+				div.insertBefore(instrel, div.firstChild);
+
+            }
+            
+            $('res').replaceChild(div, $('res').firstChild);
+            
+            if($('res') != null) {
+            	var stick = document.createElement('h3');
+            	stick.setAttribute('id', 'stick');
+            	$('res').appendChild(stick);
+            	var prevstick = document.createElement('h3');
+            	prevstick.setAttribute('id', 'prevstick');
+            	$('res').appendChild(prevstick);
+            	var scrollind = document.createElement('div');
+            	scrollind.setAttribute('id', 'scrollind');
+            	$('res').appendChild(scrollind);
+            	/*
+            	frontier = document.createElement('div');
+            	frontier.setAttribute('id', 'frontier-down');
+            	$('res').appendChild(frontier);
+            	
+            	frontierup = document.createElement('div');
+            	frontierup.setAttribute('id', 'frontier-up');
+            	$('res').appendChild(frontierup);
+            	*/
+            }
+            
+            if (selectionToRetain != null && toSelect != null) {
+            	ma("retaining selection, toselect="+toSelect);
+            	currSelection = toSelect;  
+        		syncSelectionElement();
+        		addClassName(currSelectionElement, "focused");
+	        } else {
+	        	ma("not retaining selection");
+	        	currSelection = null;
+	        }
+	        ma("ABB");
+	       	adjustViewportPosition();
+	        ma("BBA")
+	        
+	        if (currSelection != null) {
+	        	$('instructions-nullselection').style.display = 'none';
+	        	$('instructions-selection').style.display = 'block';
+	        } else {
+	        	$('instructions-nullselection').style.display = 'block';
+	        	$('instructions-selection').style.display = 'none';
+	        }
+            
+//            alert("reset interval");
+			if (window.monocle) {
+				alert(div.innerHTML);
+//				window.monocle.reportHeight(getHeight());
+			}
+			var xzhxzjh = getHeight();
+//			alert(getHeight());
+            updatingInterval = null;
+//            scroll(0,0);
+        }
+        
+        var noResults = true;
+        
+        function moveSelectionUp() {
+        	if (noResults) return;
+        	var choice = null;
+        	if (currSelection == null) {
+        		choice = currResultChoices[currResultChoices.length-1];
+        	} else {
+        		var previdx = arrIndexOf(currResultChoices, currSelection);
+        		if (previdx == 0) {
+        			choice = null;
+        		} else {
+	        		choice = currResultChoices[previdx-1];
+	        	}
+        	}
+        	//console.log("selection = " + choice);
+        	if (currSelectionElement != null) {
+        		removeClassName(currSelectionElement, "focused");
+        	}
+        	currSelection = choice;  
+        	
+        	updateInstructions();
+        	      	
+        	if (choice == null) return;
+        	
+        	syncSelectionElement();
+        	addClassName(currSelectionElement, "focused");
+        	adjustViewportPosition();
+        }
+        
+        function hasAnySelection() {
+        	return currSelection != null;
+        }
+        
+        function arrIndexOf(arr, element) {
+        	if (arr == null || arr.length == 0) return -1;
+        	for (var i = 0; i < arr.length; i++) {
+        		var el = arr[i];
+        		if (element == el)
+        			return i;
+        	}
+        	return -1;
+        }
+        
+        function hasClassName(element, classN) {
+        	var rx = new RegExp("\\b" + classN + "\\b");
+        	return (rx.test(element.className));
+        }
+        
+        function removeClassName(element, classN) {
+        	var rx = new RegExp("\\b" + classN + "\\b");
+        	//console.log("removing class " + classN + " using rx " + rx);
+        	element.className = element.className.replace(rx, "");
+        }
+        
+        function addClassName(element, classN) {
+        	removeClassName(element, classN);
+        	element.className += " " + classN;
+        }
+        
+        // Recursively find the coords for the element
+        // http://www.quirksmode.org/js/findpos.html
+        function findPos(obj) {
+			var curleft = curtop = 0;
+			if (obj.offsetParent) {
+				curleft = obj.offsetLeft
+				curtop = obj.offsetTop
+				while (obj = obj.offsetParent) {
+					curleft += obj.offsetLeft
+					curtop += obj.offsetTop
+				}
+			}
+			return {x:curleft,y:curtop};
+		}
+		
+		function updateViewportPositionLater() {
+        	var vppos = {x: document.body.scrollLeft, y: document.body.scrollTop};
+        	var vpheight = self.innerHeight;
+        	ma("adjust viewport position, currSelection="+currSelection);
+        	ma("xheight="+document.body.scrollHeight);
+        	
+        	if (currSelection == null) {
+        		document.body.scrollLeft = 0;
+        		document.body.scrollTop = 0;
+        		$('prevstick').innerHTML = '';
+        		$('prevstick').style.display = 'none';
+        		$('stick').innerHTML = '';
+        		$('stick').style.display = 'none';
+        		ma("nulled");
+        	} else {
+	        	var el = currSelectionElement;
+        		var pos = findPos(el);
+        			var mid = pos.y+(el.offsetHeight/2);
+        			document.body.scrollTop = mid-(vpheight/2);
+        			vppos.y = document.body.scrollTop;
+        	}
+			updateScrollIndX();
+        	//updateScrollInd();
+		}
+        
+        function adjustViewportPosition() {
+			setTimeout(updateViewportPositionLater, 3);        	
+        } 
+        
+        function whenScrolled() {
+        	updateScrollIndIsEvent();
+        }
+        
+        function updateScrollIndIsEvent() {
+        	updateScrollInd(true);
+        }
+        
+        function updateScrollIndX() {
+        	updateScrollInd(false);
+        }
+        
+        function updateScrollInd(isevent) {
+        
+var vppos = {x: document.body.scrollLeft, y: document.body.scrollTop};
+        	var vpheight = self.innerHeight;
+        	ma("adjust viewport position, currSelection="+currSelection);
+        	ma("xheight="+document.body.scrollHeight);
+        	
+        	if (currSelection != null) {
+	        	var el = currSelectionElement;
+        		var pos = findPos(el);
+				
+				var curr = currResults[currSelection];
+				$('prevstick').innerHTML = '';
+        		$('prevstick').style.display = 'none';
+        		$('stick').innerHTML = '';
+        		$('stick').style.display = 'none';
+			    for (var i = 0; i < allProviders.length; i++) {
+        			var p = allProviders[i];
+        			var pel = $('provider-'+i);
+        			if (pel == null) continue;
+        			//console.log("p="+p+", curr provider="+curr['provider']);
+        			if ((i+1 != allProviders.length) &&(curr['provider'] == allProviders[i+1])) {
+						var provpos = findPos(pel);
+        				if (provpos.y < vppos.y) {
+        					var posOfLastChild = findPos($(lastChildOfProvider[p]));
+        					if (posOfLastChild.y > (vppos.y+(pel.offsetHeight*0.3))) {
+	        					$('prevstick').innerHTML = pel.innerHTML + " <span>&#x2191;</span>";
+				        		$('prevstick').style.display = 'block';
+			        		}
+        				}        			
+        			} else if (p == curr['provider']) {
+						var provpos = findPos(pel);
+        				if (provpos.y < vppos.y) {
+        					$('stick').innerHTML = pel.innerHTML;
+			        		$('stick').style.display = 'block';
+							$('prevstick').innerHTML = '';
+        					$('prevstick').style.display = 'none';
+        				}
+        			}
+        		}
+        	}
+
+        
+			var totalheight = getHeight();
+        	ma("totalheight="+totalheight);
+        	var vppctoffset = (document.body.scrollTop / totalheight);
+        	var vppctlength = (self.innerHeight / totalheight);
+        	ma("offset="+vppctoffset+", length="+vppctlength);
+        	
+        	var scrollpadding = 3; /* px */
+        	
+        	$('scrollind').style.height = ((vppctlength*self.innerHeight)-(scrollpadding*2)) + 'px';
+        	$('scrollind').style.top = scrollpadding+((vppctoffset*self.innerHeight)) + 'px';
+        	if (totalheight<=400) {
+	        	scrollIndStep = 0;
+        		$('scrollind').style.opacity = 0;
+        	} else {
+    	    	$('scrollind').style.opacity = scrollIndAbsV+scrollIndMinV;
+	        	startScrollIndFadeOut();
+        	}
+        }
+
+        var scrollIndNoSteps = 20;        
+        var scrollIndStep = scrollIndNoSteps;
+        var scrollIndFreq = 0.02;
+        var scrollIndInitialDelay = 1;
+        var scrollIndAbsV = 0.25;
+        var scrollIndMinV = 0.1;
+        var scrollIndTimeout = null;
+        
+        function fadeOutScrollInd() {
+        	if (scrollIndStep == 0) return;
+        	var op = scrollIndMinV+((scrollIndAbsV/scrollIndNoSteps)*scrollIndStep);
+        	$('scrollind').style.opacity = op;
+        	scrollIndStep--;
+        	if (scrollIndStep > 0) {
+	        	ma("step:" + scrollIndStep + ", op=" + op);
+	        	scrollIndTimeout = setTimeout(fadeOutScrollInd, scrollIndFreq*1000);
+        	}
+        }
+        
+        function startScrollIndFadeOut() {
+        	scrollIndStep = scrollIndNoSteps;
+        	if (scrollIndTimeout != null) {
+        		clearTimeout(scrollIndTimeout);
+        	}
+        	scrollIndTimeout = setTimeout(fadeOutScrollInd, scrollIndInitialDelay*1000);
+        }       
+        
+        function ma(x) {
+        	if (window.monocle)
+        		alert(x);
+        	else
+        		console.log(x);
+        }
+        
+        
+        function currWindowHeight() {
+        	if (window.monocle) {
+    	    	var x = window.monocle.getHeight();
+	        	alert("x="+x);
+	        	return x;
+	        }
+	        else
+	        	return 300;
+        }
+        
+        function moveSelectionDown() {
+        	if (noResults) return;
+        	var choice = null;
+        	if (currSelection == null) {
+        		choice = currResultChoices[0];
+        	} else {
+        		var previdx = arrIndexOf(currResultChoices, currSelection);
+        		if (previdx+1 == currResultChoices.length) {
+        			choice = null;
+        		} else {
+	        		choice = currResultChoices[previdx+1];
+	        	}
+        	}
+        	//console.log("selection = " + choice);
+        	if (currSelectionElement != null) {
+        		removeClassName(currSelectionElement, "focused");
+        	}
+        	currSelection = choice;  
+        	      	
+        	updateInstructions();
+        	      	
+        	if (choice == null) return;
+        	
+        	/*
+        	var res = currResults[choice];
+        	var id = choice.replace(/r/, '');
+        	//console.log("res = " + dump(res));
+        	if (res['suggestion'] != undefined) {
+        		currSelectionElement = $('suggestion-' + id);
+        	} else {
+	        	currSelectionElement = $('result-' + id);
+        	}*/
+        	syncSelectionElement();
+        	addClassName(currSelectionElement, "focused");
+        	adjustViewportPosition();
+        }
+        
+        function updateInstructions() {
+	        if (currSelection != null) {
+	        	$('instructions-nullselection').style.display = 'none';
+	        	$('instructions-selection').style.display = 'block';
+	        } else {
+	        	$('instructions-nullselection').style.display = 'block';
+	        	$('instructions-selection').style.display = 'none';
+	        }
+        }
+        
+        function syncSelectionElement() {
+        	var res = currResults[currSelection];
+        	var id = currSelection.replace(/r/, '');
+        	//console.log("res = " + dump(res));
+        	if (res['suggestion'] != undefined) {
+        		currSelectionElement = $('suggestion-' + id);
+        	} else {
+	        	currSelectionElement = $('result-' + id);
+        	}
+        }
+        
+        function getSelection() {
+        	if (currSelection == null) return "null";
+        	return currResults[currSelection].toJSONString();
+        }
+        
+        function isEmpty() {
+        	return noResults;
+        }
+        
+        function min(x, y) {
+        	return (x > y) ? y : x;
+        }
+        
+        function max(x, y) {
+        	return (x > y) ? x : y;
+        }
+        
+        function getHeight() {
+        	var kids = $('actualResults').childNodes;
+        	var height = 0;
+        	for (var i = 0; i < kids.length; i++) {
+        		height += kids[i].scrollHeight;
+        	}
+        	
+        	ma('height: ' + height);
+        	ma('body.scrollHeight: ' + document.body.scrollHeight);
+        	ma('body.offsetHeight: ' + document.body.offsetHeight);
+        	ma('body.clientHeight: ' + document.body.clientHeight);
+        	
+        	var h = max(document.body.offsetHeight, document.body.clientHeight);//max(max(document.body.scrollHeight, document.body.offsetHeight), document.body.clientHeight);
+        	
+        	ma('h: ' + h);
+        	
+        	return h;
+        	
+        	ma('height: ' + height);
+        	
+        	return height;
+        
+        	// don't ask
+        	//return document.body.scrollHeight;
+        }
+        
+        function updateResultsList(str, st, stci) {
+            updatingString = str+'';
+            currSearchText = st+'';
+            currCISearchText = stci+'';
+//            alert("updated string");
+//            if (updatingInterval == null) {
+//                updatingInterval = window.setTimeout('reallyUpdateResultsList()', 20);
+//                alert("updated interval");
+//            } else {
+//                alert("interval = " + updatingInterval);
+//            }
+            reallyUpdateResultsList();
+        }
+        
+        function initializeScript() {
+        	if (window.monocle) {
+        		$('controls').style.display = 'none';
+        	}
+        	window.onscroll = whenScrolled;
+        	noResults = true;
+        	if (!window.monocle) {
+            	fakeUpdate();
+            } else {
+				updateScrollInd();
+            }
+        }
+        
+        function fakeGotoresult() {
+            window.monocle.goToResult('{"foo": "bar"}');
+        }
+        
+        function fakeUpdate() {
+            updateResultsList('{ "results" : ["Google Suggest", { "suggestion" : "x tube"}, { "suggestion" : "xbox 360"}, { "suggestion" : "xbox"}, { "suggestion" : "xbox 360 elite"}, { "suggestion" : "xm radio"}, { "suggestion" : "xanga"}, { "suggestion" : "xe"}, { "suggestion" : "xnxx.com"}, { "suggestion" : "xvid"}, { "suggestion" : "x"}, "Google results", { "url" : "http://www.x.org/", "location" : "www.x.org/", "title" : "X.Org Wiki - Home", "description" : "The X.Org Foundation provides an open source implementation of the X Window System."}, { "url" : "http://en.wikipedia.org/wiki/X", "location" : "en.wikipedia.org/wiki/X", "title" : "X - Wikipedia, the free encyclopedia", "description" : "In phonetics, x is the IPA and X-SAMPA symbol for the voiceless velar fricative (IPA"}, { "url" : "http://en.wikipedia.org/wiki/X_Window_System", "location" : "en.wikipedia.org/wiki/X_Window_System", "title" : "X Window System - Wikipedia, the free encyclopedia", "description" : "In computing, the X Window System (commonly X11 or X) is a networking and display"}, { "url" : "http://www.xfree86.org/", "location" : "www.xfree86.org/", "title" : "XFree86® Home to the X Window System", "description" : "X implementation for Intel x86-based platforms."}, { "url" : "http://www.apple.com/macosx/", "location" : "www.apple.com/macosx/", "title" : "Apple - Mac OS X Leopard", "description" : "The Apple Mac OS X product page. Describes features in the current version of"}, { "url" : "http://x.cygwin.com/", "location" : "x.cygwin.com/", "title" : "Cygwin/X", "description" : "A port of the X Window System to Microsoft Windows, originally deduced from XFree86."}, { "url" : "http://www.xbox.com/", "location" : "www.xbox.com/", "title" : "Xbox.com | Xbox.com Home", "description" : "Xbox.com is your ultimate source for all things Xbox and Xbox 360. Get news"}, { "url" : "http://www.xprize.org/", "location" : "www.xprize.org/", "title" : "X PRIZE Foundation", "description" : "Provides comprehensive updated facts on prize rules, activities, photos,"}, { "url" : "http://clav.mozdev.org/", "location" : "clav.mozdev.org/", "title" : "clav.mozdev.org", "description" : "Tab X #. Makes the close buttons on tabs always visible. ... x and xKiosk provided"}, { "url" : "http://www.cross-browser.com/toys/", "location" : "www.cross-browser.com/toys/", "title" : "X Demos and Applications", "description" : "Cross-Browser Javascript Libraries and Applications."}]}');
+        }
+        
+        function fakeUpdate2() {
+            updateResultsList('{ "results" : ["Google Suggest", { "suggestion" : "AHKHAHAJHAHJHJAHJ tube"}, { "suggestion" : "xbox 360"}, { "suggestion" : "xbox"}, { "suggestion" : "xbox 360 elite"}, { "suggestion" : "xm radio"}, { "suggestion" : "xanga"}, { "suggestion" : "xe"}, { "suggestion" : "xnxx.com"}, { "suggestion" : "xvid"}, { "suggestion" : "x"}, "Google results", { "url" : "http://www.x.org/", "location" : "www.x.org/", "title" : "X.Org Wiki - Home", "description" : "The X.Org Foundation provides an open source implementation of the X Window System."}, { "url" : "http://en.wikipedia.org/wiki/X", "location" : "en.wikipedia.org/wiki/X", "title" : "X - Wikipedia, the free encyclopedia", "description" : "In phonetics, x is the IPA and X-SAMPA symbol for the voiceless velar fricative (IPA"}, { "url" : "http://en.wikipedia.org/wiki/X_Window_System", "location" : "en.wikipedia.org/wiki/X_Window_System", "title" : "X Window System - Wikipedia, the free encyclopedia", "description" : "In computing, the X Window System (commonly X11 or X) is a networking and display"}, { "url" : "http://www.xfree86.org/", "location" : "www.xfree86.org/", "title" : "XFree86® Home to the X Window System", "description" : "X implementation for Intel x86-based platforms."}, { "url" : "http://www.apple.com/macosx/", "location" : "www.apple.com/macosx/", "title" : "Apple - Mac OS X Leopard", "description" : "The Apple Mac OS X product page. Describes features in the current version of"}, { "url" : "http://x.cygwin.com/", "location" : "x.cygwin.com/", "title" : "Cygwin/X", "description" : "A port of the X Window System to Microsoft Windows, originally deduced from XFree86."}, { "url" : "http://www.xbox.com/", "location" : "www.xbox.com/", "title" : "Xbox.com | Xbox.com Home", "description" : "Xbox.com is your ultimate source for all things Xbox and Xbox 360. Get news"}, { "url" : "http://www.xprize.org/", "location" : "www.xprize.org/", "title" : "X PRIZE Foundation", "description" : "Provides comprehensive updated facts on prize rules, activities, photos,"}, { "url" : "http://clav.mozdev.org/", "location" : "clav.mozdev.org/", "title" : "clav.mozdev.org", "description" : "Tab X #. Makes the close buttons on tabs always visible. ... x and xKiosk provided"}, { "url" : "http://www.cross-browser.com/toys/", "location" : "www.cross-browser.com/toys/", "title" : "X Demos and Applications", "description" : "Cross-Browser Javascript Libraries and Applications."}]}');
+        }
+        
+    </script>
+<style> html, body { -khtml-user-select: none;     background-color: white; margin: 0; padding: 0; cursor: default; border: 0; }
+#resultsl {
+    background-color: white;
+    border-top: 1px solid white;
+/*    border: 1px solid white;*/
+/*    -webkit-border-radius: 3pt;*/
+/*    padding: 0.6em;*/
+    font-family: Helvetica;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-bottom: -15pt;
+}
+
+#scrollind {
+	width: 5pt;
+	height: 80px;
+	background-color: black;
+	position: fixed;
+	opacity: 0;
+	margin: 0;
+	padding: 0;
+	right: 2px;
+	top: 2px;
+	-webkit-border-radius: 2.5pt;
+	z-index: 10000000;
+}
+
+#res {
+	font-family: "Lucida Grande";
+	font-size: 9pt;
+    margin: 0;
+    padding: 0;
+}
+
+#prevstick {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding-top: 3pt;
+	padding-bottom: 5pt;
+	padding-left: 6pt;
+		
+	display: none;
+
+	z-index: 10000;
+
+	width: 100%;
+	background-image: url(stick.png);
+	opacity: 0.92;
+	background-position: bottom;
+	background-repeat: repeat-x;
+	
+	border-bottom: 0 none;
+	
+}
+
+h3#prevstick span {
+	font-weight: normal;
+}
+
+#stick {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding-top: 3pt;
+	padding-bottom: 5pt;
+	padding-left: 6pt;
+	
+	display: none;
+	
+	z-index: 10000;
+
+	width: 100%;
+	background-image: url(stick.png);
+	background-position: bottom;
+	background-repeat: repeat-x;
+	
+	border-bottom: 0 none;
+	
+}
+/*
+#frontier-up {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 16px;
+	z-index: 5000;
+	background-image: url(frontier-up.png);
+}
+
+#frontier-down {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 16px;
+	z-index: 5000;
+	background-image: url(frontier.png);
+}
+*/
+.actualResults {
+	padding-bottom: 0;
+}
+
+h3.first {
+	margin-top: 4pt;
+}
+
+h3 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: #565656;
+	line-height: 14pt;
+	margin: 0;
+	padding: 0;
+	margin-top: 8pt;
+	padding-left: 5.5pt;
+	border-bottom: 1px solid #f3f3f3;
+	
+	text-transform: uppercase;
+	letter-spacing: 1pt;
+	font-size: 7pt;
+	color: #888888;
+	
+}
+
+.result, .suggestion, #instructions, #instructions-nullselection, #instructions-selection {
+	line-height: 14pt;
+/*	height: 14pt;*/
+	margin: 0;
+	padding: 0;
+	padding-right: 7pt;
+}
+
+#instructions, #instructions-nullselection, #instructions-selection {
+	padding-top: 2pt;
+	padding-left: 7pt;
+	color: #565656;
+	font-size: 7.5pt;
+}
+
+.result h4.description {
+	display: none;
+}
+
+.result div {
+/*	display: none;*/
+font-weight: normal;
+	padding-left: 6pt;
+	display: inline;
+	color: #005d00;
+	font-size: 8pt;
+	line-height: 11pt;
+	margin: 0;
+}
+
+.result h4 {
+	margin: 0;
+	padding: 0;
+}
+
+
+.result, .suggestion p {
+	border-bottom: 1px solid #eee;
+}
+
+.result.first, .suggestion.first p {
+	padding-top: 1px;
+}
+
+.focused.result, .focused.suggestion p {
+	border-bottom: 1px solid #b7c1ef;
+}
+
+.result h4.title, .suggestion p, h3 {
+	clear: left;
+}
+
+.result h4.title:before, .suggestion p:before {
+	margin: 0;
+	padding: 0;
+	color: #888;
+	line-height: 15pt;
+	height: 15pt;
+	font-size: 10pt;
+	float: left;
+	position: relative;
+	top: -2pt;
+	width: 15pt;
+	left: -15pt;
+	margin-right: -15pt;
+	text-align: center;
+	font-weight: normal;
+}
+
+.focused.result h4.title:before, .focused.suggestion p:before {
+	color: #b7c1ef;
+}
+
+.focused.result div {
+	color: #E0E3F3;
+}
+
+.focused {
+	background-color: #4f6be9;
+	color: white;
+	/*-webkit-box-shadow: 0 0.2em 6pt rgba(0, 0, 0, 0.5);*/
+}
+
+.result h4.title, .suggestion p {
+	display: block;
+	margin: 0;
+	padding: 0;
+	padding-left: 15pt;
+}
+
+.suggestion p:before {
+	content: "\00B7\00B7";
+}
+
+.result h4.title:before {
+/*	content: "\2023";*/
+	content: "\25B9";
+	font-size: 12pt;
+}
+
+#controls {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 9999999;
+}
+
+br.breaking {
+	clear: both;
+	height: 0px;
+	font-size: 0.1pt;
+}
+
+#hidden {
+	clear: left;
+	height: 0px;
+	margin-top: -1px;
+	font-size: 0.1pt;
+}
+
+
+</style>
+  </head>
+  <body onload="initializeScript()"><div id="resultsl"><div id="res">&nbsp;</div></div><div id="hidden">&nbsp;</div><div id="controls">
+    <button onclick="moveSelectionUp(); return false">Up</button>
+    <button onclick="moveSelectionDown(); return false">Down</button>
+    </div></body>
+</html> 

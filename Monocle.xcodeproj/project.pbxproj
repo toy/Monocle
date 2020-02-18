@@ -1,0 +1,831 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		240063020CFE1AB1009F92E6 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 240062FA0CFE1AB1009F92E6 /* Add.tiff */; };
+		240063030CFE1AB2009F92E6 /* Advanced.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 240062FB0CFE1AB1009F92E6 /* Advanced.tiff */; };
+		240063040CFE1AB2009F92E6 /* GoBack.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 240062FC0CFE1AB1009F92E6 /* GoBack.tiff */; };
+		240063050CFE1AB2009F92E6 /* PreferencesGeneral.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 240062FD0CFE1AB1009F92E6 /* PreferencesGeneral.tiff */; };
+		240063060CFE1AB2009F92E6 /* GoForward.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 240062FE0CFE1AB1009F92E6 /* GoForward.tiff */; };
+		240063070CFE1AB2009F92E6 /* Action.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 240062FF0CFE1AB1009F92E6 /* Action.tiff */; };
+		240063080CFE1AB2009F92E6 /* ColorPanel.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 240063000CFE1AB1009F92E6 /* ColorPanel.tiff */; };
+		240063090CFE1AB2009F92E6 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 240063010CFE1AB1009F92E6 /* Remove.tiff */; };
+		2400DB8A0D108BBD005B047E /* MonocleGreyGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2400DB890D108BBD005B047E /* MonocleGreyGradientView.m */; };
+		2400DC340D10A2D6005B047E /* MonocleButtonBarStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 2400DC330D10A2D6005B047E /* MonocleButtonBarStuff.m */; };
+		240212140B7D1CF200669728 /* engines-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 240212130B7D1CF200669728 /* engines-icon.png */; };
+		24055A2F0B7BA13C00BC262C /* MonocleWashDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 24055A2E0B7BA13C00BC262C /* MonocleWashDrawing.m */; };
+		2420E4F40D416AB10059D146 /* MonocleSuggestionProviding_PublicAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 2420E4E60D4167040059D146 /* MonocleSuggestionProviding_PublicAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		242282340A83EBCD007ECB88 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 242282320A83EBCD007ECB88 /* left.png */; };
+		242282350A83EBCE007ECB88 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 242282330A83EBCD007ECB88 /* right.png */; };
+		242282370A83EDC7007ECB88 /* cog.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 242282360A83EDC7007ECB88 /* cog.tiff */; };
+		242282390A83F0FB007ECB88 /* cog-menu-old.png in Resources */ = {isa = PBXBuildFile; fileRef = 242282380A83F0FA007ECB88 /* cog-menu-old.png */; };
+		2422824C0A8405F3007ECB88 /* HTMLLikeTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 242282470A8405F2007ECB88 /* HTMLLikeTag.m */; };
+		2422824D0A8405F6007ECB88 /* HTML5Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 242282490A8405F2007ECB88 /* HTML5Parser.m */; };
+		2422824E0A8405F6007ECB88 /* LoadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2422824B0A8405F3007ECB88 /* LoadController.m */; };
+		242282500A840616007ECB88 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2422824F0A840616007ECB88 /* WebKit.framework */; };
+		2422C06C0A7D2A1900956D86 /* NSEventMonocleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2422C06B0A7D2A1700956D86 /* NSEventMonocleExtensions.m */; };
+		2422C1D50A7D4E9400956D86 /* MonocleEngineArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2422C1D40A7D4E9400956D86 /* MonocleEngineArrayController.m */; };
+		2431293F0D22B235005DE6D9 /* stick.png in Resources */ = {isa = PBXBuildFile; fileRef = 2431293E0D22B235005DE6D9 /* stick.png */; };
+		2431295B0D22C2C4005DE6D9 /* frontier-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 243129590D22C2C4005DE6D9 /* frontier-up.png */; };
+		2431295C0D22C2C4005DE6D9 /* frontier.png in Resources */ = {isa = PBXBuildFile; fileRef = 2431295A0D22C2C4005DE6D9 /* frontier.png */; };
+		243E164C0A77FBD8007B0516 /* MonocleSuggestionProviding.m in Sources */ = {isa = PBXBuildFile; fileRef = 243E164B0A77FBD8007B0516 /* MonocleSuggestionProviding.m */; };
+		24420F730B76892B00B1ED17 /* NSColor+ContrastingLabelExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24420F720B76892B00B1ED17 /* NSColor+ContrastingLabelExtensions.m */; };
+		245F54460B8353FE00EC35E6 /* MonoclePreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 245F54440B8353FE00EC35E6 /* MonoclePreferences.m */; };
+		246563251227166E003BA255 /* GTMNSString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = 246563231227166E003BA255 /* GTMNSString+HTML.h */; };
+		246563261227166E003BA255 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 246563241227166E003BA255 /* GTMNSString+HTML.m */; };
+		246AFBD70A68473900AD447B /* add_disabled.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBD10A68473900AD447B /* add_disabled.tiff */; };
+		246AFBD80A68473900AD447B /* add_idle.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBD20A68473900AD447B /* add_idle.tiff */; };
+		246AFBD90A68473900AD447B /* add_pressed.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBD30A68473900AD447B /* add_pressed.tiff */; };
+		246AFBDA0A68473900AD447B /* remove_disabled.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBD40A68473900AD447B /* remove_disabled.tiff */; };
+		246AFBDB0A68473900AD447B /* remove_idle.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBD50A68473900AD447B /* remove_idle.tiff */; };
+		246AFBDC0A68473900AD447B /* remove_pressed.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBD60A68473900AD447B /* remove_pressed.tiff */; };
+		246AFBDF0A68476D00AD447B /* SearchingPrefs.nib in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBDD0A68476D00AD447B /* SearchingPrefs.nib */; };
+		246AFBEB0A68501A00AD447B /* MonoclePreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246AFBEA0A68501A00AD447B /* MonoclePreferenceController.m */; };
+		246BEA9A1137475200D6BB79 /* BSJSONEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 246BEA901137475200D6BB79 /* BSJSONEncoder.h */; };
+		246BEA9B1137475200D6BB79 /* BSJSONEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BEA911137475200D6BB79 /* BSJSONEncoder.m */; };
+		246BEA9C1137475200D6BB79 /* NSArray+BSJSONAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 246BEA921137475200D6BB79 /* NSArray+BSJSONAdditions.h */; };
+		246BEA9D1137475200D6BB79 /* NSArray+BSJSONAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BEA931137475200D6BB79 /* NSArray+BSJSONAdditions.m */; };
+		246BEA9E1137475200D6BB79 /* NSDictionary+BSJSONAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 246BEA941137475200D6BB79 /* NSDictionary+BSJSONAdditions.h */; };
+		246BEA9F1137475200D6BB79 /* NSDictionary+BSJSONAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BEA951137475200D6BB79 /* NSDictionary+BSJSONAdditions.m */; };
+		246BEAA01137475200D6BB79 /* NSScanner+BSJSONAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 246BEA961137475200D6BB79 /* NSScanner+BSJSONAdditions.h */; };
+		246BEAA11137475200D6BB79 /* NSScanner+BSJSONAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BEA971137475200D6BB79 /* NSScanner+BSJSONAdditions.m */; };
+		246BEAA21137475200D6BB79 /* NSString+BSJSONAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 246BEA981137475200D6BB79 /* NSString+BSJSONAdditions.h */; };
+		246BEAA31137475200D6BB79 /* NSString+BSJSONAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BEA991137475200D6BB79 /* NSString+BSJSONAdditions.m */; };
+		246F9F900B751C4C00888B4F /* MonocleGlassIconDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 246F9F8F0B751C4C00888B4F /* MonocleGlassIconDrawing.m */; };
+		2478F1E60A72CEE30039E956 /* MonocleSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478F1E50A72CEE30039E956 /* MonocleSearchView.m */; };
+		2478F3BB0A72DAB70039E956 /* CTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478F3BA0A72DAB70039E956 /* CTGradient.m */; };
+		248260F40C36F8AA0046688D /* json.js in Sources */ = {isa = PBXBuildFile; fileRef = 248260F30C36F8AA0046688D /* json.js */; };
+		248261000C36FAC50046688D /* results.html in Resources */ = {isa = PBXBuildFile; fileRef = 248260FF0C36FAC50046688D /* results.html */; };
+		248261A80C37040B0046688D /* json.js in Resources */ = {isa = PBXBuildFile; fileRef = 248260F30C36F8AA0046688D /* json.js */; };
+		24874CED0C1B4A6800B66EFE /* MonocleReorderableArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24874CEB0C1B4A6800B66EFE /* MonocleReorderableArrayController.m */; };
+		2490D7A20D43F7390034B32F /* cog-menu.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2490D7A10D43F7390034B32F /* cog-menu.tiff */; };
+		2490D7FB0D43FCA70034B32F /* cog-menu-small.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2490D7FA0D43FCA70034B32F /* cog-menu-small.tiff */; };
+		24990B260B80E5D8005DC9C4 /* Yahoo.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 24990B240B80E5D8005DC9C4 /* Yahoo.tiff */; };
+		24990B630B80E8B3005DC9C4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24990B4F0B80E8B3005DC9C4 /* Sparkle.framework */; };
+		24990B680B80E8D7005DC9C4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24990B4F0B80E8B3005DC9C4 /* Sparkle.framework */; };
+		249C7FB80A44634A00769DCD /* MonocleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249C7FB60A44634A00769DCD /* MonocleController.m */; };
+		249C803F0A44711900769DCD /* DrawingExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 249C803E0A44711900769DCD /* DrawingExtras.m */; };
+		249C81850A447FD100769DCD /* MonocleSearchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 249C81840A447FD100769DCD /* MonocleSearchWindow.m */; };
+		24A4377F0A7753690090E155 /* MonocleSearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A4377E0A7753690090E155 /* MonocleSearchField.m */; };
+		24B5BAB80AEAC93300819B52 /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B5BAB30AEAC93300819B52 /* PTHotKey.m */; };
+		24B5BAB90AEAC93300819B52 /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B5BAB50AEAC93300819B52 /* PTHotKeyCenter.m */; };
+		24B5BABA0AEAC93300819B52 /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B5BAB70AEAC93300819B52 /* PTKeyCombo.m */; };
+		24B5BAF10AEACC5000819B52 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B5BAF00AEACC5000819B52 /* Carbon.framework */; };
+		24B5BCA40AEAD61800819B52 /* ShortcutRecorder.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24B5BCA20AEAD61800819B52 /* ShortcutRecorder.strings */; };
+		24B60A650B7E6A5B004F07C9 /* MonocleColorSwatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B60A640B7E6A5B004F07C9 /* MonocleColorSwatchCell.m */; };
+		24B60AFF0B7E6F3A004F07C9 /* MonocleWebKitGenericSiteIconAcquiring.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B60AFE0B7E6F3A004F07C9 /* MonocleWebKitGenericSiteIconAcquiring.m */; };
+		24B60BCC0B7E8943004F07C9 /* general.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 24B60BCB0B7E8943004F07C9 /* general.tiff */; };
+		24B7F5C5105C371A005DE273 /* Bing.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 24B7F5C4105C371A005DE273 /* Bing.tiff */; };
+		24B7F5C7105C3724005DE273 /* YouTube.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 24B7F5C6105C3724005DE273 /* YouTube.tiff */; };
+		24B8A6AB103F40A100F5A56F /* GoogleSuggestExtract.js in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A6AA103F40A100F5A56F /* GoogleSuggestExtract.js */; };
+		24B8A6AD103F40B500F5A56F /* GoogleSuggestExtract.js in Resources */ = {isa = PBXBuildFile; fileRef = 24B8A6AA103F40A100F5A56F /* GoogleSuggestExtract.js */; };
+		24BC0F200A979369001FE0E9 /* Monocle.icns in Resources */ = {isa = PBXBuildFile; fileRef = 24BC0F1F0A979369001FE0E9 /* Monocle.icns */; };
+		24C648530B640A5C00A1985E /* MGViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C648520B640A5C00A1985E /* MGViewAnimation.m */; };
+		24C648890B640CCE00A1985E /* MonocleStatusItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C648880B640CCE00A1985E /* MonocleStatusItem.m */; };
+		24CD8B1B0D301BD7005E55F1 /* CocoaAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CD8B1A0D301BD7005E55F1 /* CocoaAdditions.m */; };
+		24CD9F360D11E5AE00A317B5 /* MonocleBarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CD9F350D11E5AE00A317B5 /* MonocleBarButtonCell.m */; };
+		24CD9F390D11F49300A317B5 /* MonocleBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CD9F380D11F49300A317B5 /* MonocleBarButton.m */; };
+		24D262FB0A8010C100B6CA39 /* Wikipedia.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 24D262F90A8010C100B6CA39 /* Wikipedia.tiff */; };
+		24D262FC0A8010C100B6CA39 /* Google.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 24D262FA0A8010C100B6CA39 /* Google.tiff */; };
+		24D357F80D37E97A002FD803 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D357EE0D37E979002FD803 /* SRRecorderControl.m */; };
+		24D357F90D37E97A002FD803 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D357F30D37E97A002FD803 /* SRRecorderCell.m */; };
+		24D357FA0D37E97A002FD803 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D357F40D37E97A002FD803 /* SRCommon.m */; };
+		24D357FB0D37E97A002FD803 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D357F60D37E97A002FD803 /* SRValidator.m */; };
+		24D357FC0D37E97A002FD803 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D357F70D37E97A002FD803 /* SRKeyCodeTransformer.m */; };
+		24E2E0300A90A0D6006CC71B /* MonocleGreyTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2E02F0A90A0D6006CC71B /* MonocleGreyTextFieldCell.m */; };
+		24EE308F0B9E3A590059F453 /* MonocleEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE308D0B9E3A590059F453 /* MonocleEncoding.m */; };
+		24F4AD8B0B85103100044621 /* MonocleFieldEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4AD890B85103000044621 /* MonocleFieldEditor.m */; };
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		24990B640B80E8D3005DC9C4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24990B680B80E8D7005DC9C4 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		240062FA0CFE1AB1009F92E6 /* Add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Add.tiff; sourceTree = "<group>"; };
+		240062FB0CFE1AB1009F92E6 /* Advanced.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Advanced.tiff; sourceTree = "<group>"; };
+		240062FC0CFE1AB1009F92E6 /* GoBack.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = GoBack.tiff; sourceTree = "<group>"; };
+		240062FD0CFE1AB1009F92E6 /* PreferencesGeneral.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = PreferencesGeneral.tiff; sourceTree = "<group>"; };
+		240062FE0CFE1AB1009F92E6 /* GoForward.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = GoForward.tiff; sourceTree = "<group>"; };
+		240062FF0CFE1AB1009F92E6 /* Action.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Action.tiff; sourceTree = "<group>"; };
+		240063000CFE1AB1009F92E6 /* ColorPanel.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ColorPanel.tiff; sourceTree = "<group>"; };
+		240063010CFE1AB1009F92E6 /* Remove.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Remove.tiff; sourceTree = "<group>"; };
+		2400DB880D108BBD005B047E /* MonocleGreyGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleGreyGradientView.h; sourceTree = "<group>"; };
+		2400DB890D108BBD005B047E /* MonocleGreyGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleGreyGradientView.m; sourceTree = "<group>"; };
+		2400DC320D10A2D6005B047E /* MonocleButtonBarStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleButtonBarStuff.h; sourceTree = "<group>"; };
+		2400DC330D10A2D6005B047E /* MonocleButtonBarStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleButtonBarStuff.m; sourceTree = "<group>"; };
+		240212130B7D1CF200669728 /* engines-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "engines-icon.png"; sourceTree = "<group>"; };
+		24055A2D0B7BA13C00BC262C /* MonocleWashDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleWashDrawing.h; sourceTree = "<group>"; };
+		24055A2E0B7BA13C00BC262C /* MonocleWashDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleWashDrawing.m; sourceTree = "<group>"; };
+		2420E4E60D4167040059D146 /* MonocleSuggestionProviding_PublicAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleSuggestionProviding_PublicAPI.h; sourceTree = "<group>"; };
+		242282320A83EBCD007ECB88 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
+		242282330A83EBCD007ECB88 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		242282360A83EDC7007ECB88 /* cog.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = cog.tiff; sourceTree = "<group>"; };
+		242282380A83F0FA007ECB88 /* cog-menu-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog-menu-old.png"; sourceTree = "<group>"; };
+		242282460A8405F2007ECB88 /* HTMLLikeTag.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = HTMLLikeTag.h; sourceTree = "<group>"; };
+		242282470A8405F2007ECB88 /* HTMLLikeTag.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = HTMLLikeTag.m; sourceTree = "<group>"; };
+		242282480A8405F2007ECB88 /* HTML5Parser.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = HTML5Parser.h; sourceTree = "<group>"; };
+		242282490A8405F2007ECB88 /* HTML5Parser.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = HTML5Parser.m; sourceTree = "<group>"; };
+		2422824A0A8405F3007ECB88 /* LoadController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LoadController.h; sourceTree = "<group>"; };
+		2422824B0A8405F3007ECB88 /* LoadController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = LoadController.m; sourceTree = "<group>"; };
+		2422824F0A840616007ECB88 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		2422C06A0A7D2A1600956D86 /* NSEventMonocleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSEventMonocleExtensions.h; sourceTree = "<group>"; };
+		2422C06B0A7D2A1700956D86 /* NSEventMonocleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSEventMonocleExtensions.m; sourceTree = "<group>"; };
+		2422C1D30A7D4E9300956D86 /* MonocleEngineArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleEngineArrayController.h; sourceTree = "<group>"; };
+		2422C1D40A7D4E9400956D86 /* MonocleEngineArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleEngineArrayController.m; sourceTree = "<group>"; };
+		2431293E0D22B235005DE6D9 /* stick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick.png; sourceTree = "<group>"; };
+		243129590D22C2C4005DE6D9 /* frontier-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frontier-up.png"; sourceTree = "<group>"; };
+		2431295A0D22C2C4005DE6D9 /* frontier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontier.png; sourceTree = "<group>"; };
+		243E164A0A77FBD8007B0516 /* MonocleSuggestionProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleSuggestionProviding.h; sourceTree = "<group>"; };
+		243E164B0A77FBD8007B0516 /* MonocleSuggestionProviding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleSuggestionProviding.m; sourceTree = "<group>"; };
+		24420F650B76892B00B1ED17 /* NSColor+ContrastingLabelExtensions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NSColor+ContrastingLabelExtensions.h"; sourceTree = "<group>"; };
+		24420F720B76892B00B1ED17 /* NSColor+ContrastingLabelExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ContrastingLabelExtensions.m"; sourceTree = "<group>"; };
+		244235760A7AB978002223BA /* MonocleSpotlightSearchEngine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MonocleSpotlightSearchEngine-Info.plist"; sourceTree = "<group>"; };
+		245F54430B8353FE00EC35E6 /* MonoclePreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonoclePreferences.h; sourceTree = "<group>"; };
+		245F54440B8353FE00EC35E6 /* MonoclePreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonoclePreferences.m; sourceTree = "<group>"; };
+		246563231227166E003BA255 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		246563241227166E003BA255 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		246AFBD10A68473900AD447B /* add_disabled.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = add_disabled.tiff; sourceTree = "<group>"; };
+		246AFBD20A68473900AD447B /* add_idle.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = add_idle.tiff; sourceTree = "<group>"; };
+		246AFBD30A68473900AD447B /* add_pressed.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = add_pressed.tiff; sourceTree = "<group>"; };
+		246AFBD40A68473900AD447B /* remove_disabled.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = remove_disabled.tiff; sourceTree = "<group>"; };
+		246AFBD50A68473900AD447B /* remove_idle.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = remove_idle.tiff; sourceTree = "<group>"; };
+		246AFBD60A68473900AD447B /* remove_pressed.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = remove_pressed.tiff; sourceTree = "<group>"; };
+		246AFBDE0A68476D00AD447B /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SearchingPrefs.nib; sourceTree = "<group>"; };
+		246AFBE90A68501A00AD447B /* MonoclePreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonoclePreferenceController.h; sourceTree = "<group>"; };
+		246AFBEA0A68501A00AD447B /* MonoclePreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonoclePreferenceController.m; sourceTree = "<group>"; };
+		246BEA901137475200D6BB79 /* BSJSONEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJSONEncoder.h; sourceTree = "<group>"; };
+		246BEA911137475200D6BB79 /* BSJSONEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJSONEncoder.m; sourceTree = "<group>"; };
+		246BEA921137475200D6BB79 /* NSArray+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BSJSONAdditions.h"; sourceTree = "<group>"; };
+		246BEA931137475200D6BB79 /* NSArray+BSJSONAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BSJSONAdditions.m"; sourceTree = "<group>"; };
+		246BEA941137475200D6BB79 /* NSDictionary+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BSJSONAdditions.h"; sourceTree = "<group>"; };
+		246BEA951137475200D6BB79 /* NSDictionary+BSJSONAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BSJSONAdditions.m"; sourceTree = "<group>"; };
+		246BEA961137475200D6BB79 /* NSScanner+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScanner+BSJSONAdditions.h"; sourceTree = "<group>"; };
+		246BEA971137475200D6BB79 /* NSScanner+BSJSONAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSScanner+BSJSONAdditions.m"; sourceTree = "<group>"; };
+		246BEA981137475200D6BB79 /* NSString+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BSJSONAdditions.h"; sourceTree = "<group>"; };
+		246BEA991137475200D6BB79 /* NSString+BSJSONAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BSJSONAdditions.m"; sourceTree = "<group>"; };
+		246F9F8E0B751C4C00888B4F /* MonocleGlassIconDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleGlassIconDrawing.h; sourceTree = "<group>"; };
+		246F9F8F0B751C4C00888B4F /* MonocleGlassIconDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleGlassIconDrawing.m; sourceTree = "<group>"; };
+		2478F1E40A72CEE30039E956 /* MonocleSearchView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MonocleSearchView.h; sourceTree = "<group>"; };
+		2478F1E50A72CEE30039E956 /* MonocleSearchView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MonocleSearchView.m; sourceTree = "<group>"; };
+		2478F3B90A72DAB70039E956 /* CTGradient.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CTGradient.h; sourceTree = "<group>"; };
+		2478F3BA0A72DAB70039E956 /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
+		248260F30C36F8AA0046688D /* json.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = json.js; sourceTree = "<group>"; };
+		248260FF0C36FAC50046688D /* results.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = results.html; sourceTree = "<group>"; };
+		24874CEA0C1B4A6800B66EFE /* MonocleReorderableArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleReorderableArrayController.h; sourceTree = "<group>"; };
+		24874CEB0C1B4A6800B66EFE /* MonocleReorderableArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleReorderableArrayController.m; sourceTree = "<group>"; };
+		2490D7A10D43F7390034B32F /* cog-menu.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "cog-menu.tiff"; sourceTree = "<group>"; };
+		2490D7FA0D43FCA70034B32F /* cog-menu-small.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "cog-menu-small.tiff"; sourceTree = "<group>"; };
+		24990B240B80E5D8005DC9C4 /* Yahoo.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Yahoo.tiff; sourceTree = "<group>"; };
+		24990B4F0B80E8B3005DC9C4 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		249C7FB60A44634A00769DCD /* MonocleController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MonocleController.m; sourceTree = "<group>"; };
+		249C7FB70A44634A00769DCD /* MonocleController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MonocleController.h; sourceTree = "<group>"; };
+		249C803D0A44711900769DCD /* DrawingExtras.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DrawingExtras.h; sourceTree = "<group>"; };
+		249C803E0A44711900769DCD /* DrawingExtras.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DrawingExtras.m; sourceTree = "<group>"; };
+		249C81830A447FD100769DCD /* MonocleSearchWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleSearchWindow.h; sourceTree = "<group>"; };
+		249C81840A447FD100769DCD /* MonocleSearchWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleSearchWindow.m; sourceTree = "<group>"; };
+		24A4377D0A7753690090E155 /* MonocleSearchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleSearchField.h; sourceTree = "<group>"; };
+		24A4377E0A7753690090E155 /* MonocleSearchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleSearchField.m; sourceTree = "<group>"; };
+		24B5BAB20AEAC93300819B52 /* PTHotKey.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PTHotKey.h; sourceTree = "<group>"; };
+		24B5BAB30AEAC93300819B52 /* PTHotKey.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PTHotKey.m; sourceTree = "<group>"; };
+		24B5BAB40AEAC93300819B52 /* PTHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PTHotKeyCenter.h; sourceTree = "<group>"; };
+		24B5BAB50AEAC93300819B52 /* PTHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PTHotKeyCenter.m; sourceTree = "<group>"; };
+		24B5BAB60AEAC93300819B52 /* PTKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PTKeyCombo.h; sourceTree = "<group>"; };
+		24B5BAB70AEAC93300819B52 /* PTKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PTKeyCombo.m; sourceTree = "<group>"; };
+		24B5BAF00AEACC5000819B52 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		24B5BCA30AEAD61800819B52 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
+		24B60A630B7E6A5B004F07C9 /* MonocleColorSwatchCell.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MonocleColorSwatchCell.h; sourceTree = "<group>"; };
+		24B60A640B7E6A5B004F07C9 /* MonocleColorSwatchCell.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MonocleColorSwatchCell.m; sourceTree = "<group>"; };
+		24B60AFD0B7E6F3A004F07C9 /* MonocleWebKitGenericSiteIconAcquiring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleWebKitGenericSiteIconAcquiring.h; sourceTree = "<group>"; };
+		24B60AFE0B7E6F3A004F07C9 /* MonocleWebKitGenericSiteIconAcquiring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleWebKitGenericSiteIconAcquiring.m; sourceTree = "<group>"; };
+		24B60BCB0B7E8943004F07C9 /* general.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = general.tiff; sourceTree = "<group>"; };
+		24B7F5C4105C371A005DE273 /* Bing.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Bing.tiff; sourceTree = "<group>"; };
+		24B7F5C6105C3724005DE273 /* YouTube.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = YouTube.tiff; sourceTree = "<group>"; };
+		24B8A6AA103F40A100F5A56F /* GoogleSuggestExtract.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = GoogleSuggestExtract.js; sourceTree = "<group>"; };
+		24BC0F1F0A979369001FE0E9 /* Monocle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Monocle.icns; sourceTree = "<group>"; };
+		24C648510B640A5C00A1985E /* MGViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MGViewAnimation.h; sourceTree = "<group>"; };
+		24C648520B640A5C00A1985E /* MGViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MGViewAnimation.m; sourceTree = "<group>"; };
+		24C648870B640CCE00A1985E /* MonocleStatusItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleStatusItem.h; sourceTree = "<group>"; };
+		24C648880B640CCE00A1985E /* MonocleStatusItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleStatusItem.m; sourceTree = "<group>"; };
+		24CD8B190D301BD7005E55F1 /* CocoaAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaAdditions.h; sourceTree = "<group>"; };
+		24CD8B1A0D301BD7005E55F1 /* CocoaAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaAdditions.m; sourceTree = "<group>"; };
+		24CD9F340D11E5AE00A317B5 /* MonocleBarButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleBarButtonCell.h; sourceTree = "<group>"; };
+		24CD9F350D11E5AE00A317B5 /* MonocleBarButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleBarButtonCell.m; sourceTree = "<group>"; };
+		24CD9F370D11F49300A317B5 /* MonocleBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleBarButton.h; sourceTree = "<group>"; };
+		24CD9F380D11F49300A317B5 /* MonocleBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleBarButton.m; sourceTree = "<group>"; };
+		24D262F90A8010C100B6CA39 /* Wikipedia.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Wikipedia.tiff; sourceTree = "<group>"; };
+		24D262FA0A8010C100B6CA39 /* Google.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Google.tiff; sourceTree = "<group>"; };
+		24D357EE0D37E979002FD803 /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = SOURCE_ROOT; };
+		24D357EF0D37E979002FD803 /* SRRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderControl.h; sourceTree = SOURCE_ROOT; };
+		24D357F00D37E979002FD803 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = SOURCE_ROOT; };
+		24D357F10D37E97A002FD803 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = SOURCE_ROOT; };
+		24D357F20D37E97A002FD803 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = SOURCE_ROOT; };
+		24D357F30D37E97A002FD803 /* SRRecorderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderCell.m; sourceTree = SOURCE_ROOT; };
+		24D357F40D37E97A002FD803 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = SOURCE_ROOT; };
+		24D357F50D37E97A002FD803 /* SRRecorderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderCell.h; sourceTree = SOURCE_ROOT; };
+		24D357F60D37E97A002FD803 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = SOURCE_ROOT; };
+		24D357F70D37E97A002FD803 /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRKeyCodeTransformer.m; sourceTree = SOURCE_ROOT; };
+		24E2E02E0A90A0D6006CC71B /* MonocleGreyTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MonocleGreyTextFieldCell.h; sourceTree = "<group>"; };
+		24E2E02F0A90A0D6006CC71B /* MonocleGreyTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MonocleGreyTextFieldCell.m; sourceTree = "<group>"; };
+		24EE308C0B9E3A590059F453 /* MonocleEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleEncoding.h; sourceTree = "<group>"; };
+		24EE308D0B9E3A590059F453 /* MonocleEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleEncoding.m; sourceTree = "<group>"; };
+		24F4AD880B85103000044621 /* MonocleFieldEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleFieldEditor.h; sourceTree = "<group>"; };
+		24F4AD890B85103000044621 /* MonocleFieldEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleFieldEditor.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* Monocle_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monocle_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Monocle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monocle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				242282500A840616007ECB88 /* WebKit.framework in Frameworks */,
+				24B5BAF10AEACC5000819B52 /* Carbon.framework in Frameworks */,
+				24990B630B80E8B3005DC9C4 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				24874CEA0C1B4A6800B66EFE /* MonocleReorderableArrayController.h */,
+				24874CEB0C1B4A6800B66EFE /* MonocleReorderableArrayController.m */,
+				24B60AFD0B7E6F3A004F07C9 /* MonocleWebKitGenericSiteIconAcquiring.h */,
+				24B60AFE0B7E6F3A004F07C9 /* MonocleWebKitGenericSiteIconAcquiring.m */,
+				2422823A0A8405E2007ECB88 /* Discovery */,
+				2422C1D30A7D4E9300956D86 /* MonocleEngineArrayController.h */,
+				2422C1D40A7D4E9400956D86 /* MonocleEngineArrayController.m */,
+				24EE308C0B9E3A590059F453 /* MonocleEncoding.h */,
+				24EE308D0B9E3A590059F453 /* MonocleEncoding.m */,
+				2422C06A0A7D2A1600956D86 /* NSEventMonocleExtensions.h */,
+				2422C06B0A7D2A1700956D86 /* NSEventMonocleExtensions.m */,
+				2420E4E60D4167040059D146 /* MonocleSuggestionProviding_PublicAPI.h */,
+				246BEA901137475200D6BB79 /* BSJSONEncoder.h */,
+				246BEA911137475200D6BB79 /* BSJSONEncoder.m */,
+				246BEA921137475200D6BB79 /* NSArray+BSJSONAdditions.h */,
+				246BEA931137475200D6BB79 /* NSArray+BSJSONAdditions.m */,
+				246BEA941137475200D6BB79 /* NSDictionary+BSJSONAdditions.h */,
+				246BEA951137475200D6BB79 /* NSDictionary+BSJSONAdditions.m */,
+				246BEA961137475200D6BB79 /* NSScanner+BSJSONAdditions.h */,
+				246BEA971137475200D6BB79 /* NSScanner+BSJSONAdditions.m */,
+				246BEA981137475200D6BB79 /* NSString+BSJSONAdditions.h */,
+				246BEA991137475200D6BB79 /* NSString+BSJSONAdditions.m */,
+				243E164A0A77FBD8007B0516 /* MonocleSuggestionProviding.h */,
+				243E164B0A77FBD8007B0516 /* MonocleSuggestionProviding.m */,
+				246563231227166E003BA255 /* GTMNSString+HTML.h */,
+				246563241227166E003BA255 /* GTMNSString+HTML.m */,
+				24A4377D0A7753690090E155 /* MonocleSearchField.h */,
+				24A4377E0A7753690090E155 /* MonocleSearchField.m */,
+				245F54430B8353FE00EC35E6 /* MonoclePreferences.h */,
+				245F54440B8353FE00EC35E6 /* MonoclePreferences.m */,
+				24B5BACF0AEAC95300819B52 /* Hot keys and recorders */,
+				2478F3BC0A72DABD0039E956 /* Looks */,
+				24C648870B640CCE00A1985E /* MonocleStatusItem.h */,
+				24C648880B640CCE00A1985E /* MonocleStatusItem.m */,
+				2478F1E40A72CEE30039E956 /* MonocleSearchView.h */,
+				2478F1E50A72CEE30039E956 /* MonocleSearchView.m */,
+				249C7FB70A44634A00769DCD /* MonocleController.h */,
+				249C7FB60A44634A00769DCD /* MonocleController.m */,
+				24F4AD880B85103000044621 /* MonocleFieldEditor.h */,
+				24F4AD890B85103000044621 /* MonocleFieldEditor.m */,
+				249C81830A447FD100769DCD /* MonocleSearchWindow.h */,
+				249C81840A447FD100769DCD /* MonocleSearchWindow.m */,
+				246AFBE90A68501A00AD447B /* MonoclePreferenceController.h */,
+				246AFBEA0A68501A00AD447B /* MonoclePreferenceController.m */,
+				24055A2D0B7BA13C00BC262C /* MonocleWashDrawing.h */,
+				24055A2E0B7BA13C00BC262C /* MonocleWashDrawing.m */,
+				24CD8B190D301BD7005E55F1 /* CocoaAdditions.h */,
+				24CD8B1A0D301BD7005E55F1 /* CocoaAdditions.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24990B4F0B80E8B3005DC9C4 /* Sparkle.framework */,
+				24B5BAF00AEACC5000819B52 /* Carbon.framework */,
+				2422824F0A840616007ECB88 /* WebKit.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Monocle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2422823A0A8405E2007ECB88 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				242282460A8405F2007ECB88 /* HTMLLikeTag.h */,
+				242282470A8405F2007ECB88 /* HTMLLikeTag.m */,
+				242282480A8405F2007ECB88 /* HTML5Parser.h */,
+				242282490A8405F2007ECB88 /* HTML5Parser.m */,
+				2422824A0A8405F3007ECB88 /* LoadController.h */,
+				2422824B0A8405F3007ECB88 /* LoadController.m */,
+			);
+			name = Discovery;
+			sourceTree = "<group>";
+		};
+		2478F3BC0A72DABD0039E956 /* Looks */ = {
+			isa = PBXGroup;
+			children = (
+				24CD9F370D11F49300A317B5 /* MonocleBarButton.h */,
+				24CD9F380D11F49300A317B5 /* MonocleBarButton.m */,
+				24420F650B76892B00B1ED17 /* NSColor+ContrastingLabelExtensions.h */,
+				24420F720B76892B00B1ED17 /* NSColor+ContrastingLabelExtensions.m */,
+				246F9F8E0B751C4C00888B4F /* MonocleGlassIconDrawing.h */,
+				246F9F8F0B751C4C00888B4F /* MonocleGlassIconDrawing.m */,
+				24C648510B640A5C00A1985E /* MGViewAnimation.h */,
+				24C648520B640A5C00A1985E /* MGViewAnimation.m */,
+				2478F3B90A72DAB70039E956 /* CTGradient.h */,
+				2478F3BA0A72DAB70039E956 /* CTGradient.m */,
+				249C803D0A44711900769DCD /* DrawingExtras.h */,
+				249C803E0A44711900769DCD /* DrawingExtras.m */,
+				24E2E02E0A90A0D6006CC71B /* MonocleGreyTextFieldCell.h */,
+				24E2E02F0A90A0D6006CC71B /* MonocleGreyTextFieldCell.m */,
+				24B60A630B7E6A5B004F07C9 /* MonocleColorSwatchCell.h */,
+				24B60A640B7E6A5B004F07C9 /* MonocleColorSwatchCell.m */,
+				2400DB880D108BBD005B047E /* MonocleGreyGradientView.h */,
+				2400DB890D108BBD005B047E /* MonocleGreyGradientView.m */,
+				2400DC320D10A2D6005B047E /* MonocleButtonBarStuff.h */,
+				2400DC330D10A2D6005B047E /* MonocleButtonBarStuff.m */,
+				24CD9F340D11E5AE00A317B5 /* MonocleBarButtonCell.h */,
+				24CD9F350D11E5AE00A317B5 /* MonocleBarButtonCell.m */,
+			);
+			name = Looks;
+			sourceTree = "<group>";
+		};
+		24990B280B80E5DD005DC9C4 /* Default search engines */ = {
+			isa = PBXGroup;
+			children = (
+				24B7F5C6105C3724005DE273 /* YouTube.tiff */,
+				24990B240B80E5D8005DC9C4 /* Yahoo.tiff */,
+				24B7F5C4105C371A005DE273 /* Bing.tiff */,
+				24D262F90A8010C100B6CA39 /* Wikipedia.tiff */,
+				24D262FA0A8010C100B6CA39 /* Google.tiff */,
+			);
+			name = "Default search engines";
+			sourceTree = "<group>";
+		};
+		24B5BAAD0AEAC93300819B52 /* HotKey */ = {
+			isa = PBXGroup;
+			children = (
+				24B5BAB20AEAC93300819B52 /* PTHotKey.h */,
+				24B5BAB30AEAC93300819B52 /* PTHotKey.m */,
+				24B5BAB40AEAC93300819B52 /* PTHotKeyCenter.h */,
+				24B5BAB50AEAC93300819B52 /* PTHotKeyCenter.m */,
+				24B5BAB60AEAC93300819B52 /* PTKeyCombo.h */,
+				24B5BAB70AEAC93300819B52 /* PTKeyCombo.m */,
+			);
+			path = HotKey;
+			sourceTree = "<group>";
+		};
+		24B5BABB0AEAC94E00819B52 /* Shortcut Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				24D357EE0D37E979002FD803 /* SRRecorderControl.m */,
+				24D357EF0D37E979002FD803 /* SRRecorderControl.h */,
+				24D357F00D37E979002FD803 /* SRCommon.h */,
+				24D357F10D37E97A002FD803 /* SRKeyCodeTransformer.h */,
+				24D357F20D37E97A002FD803 /* SRValidator.h */,
+				24D357F30D37E97A002FD803 /* SRRecorderCell.m */,
+				24D357F40D37E97A002FD803 /* SRCommon.m */,
+				24D357F50D37E97A002FD803 /* SRRecorderCell.h */,
+				24D357F60D37E97A002FD803 /* SRValidator.m */,
+				24D357F70D37E97A002FD803 /* SRKeyCodeTransformer.m */,
+			);
+			name = "Shortcut Recorder";
+			path = Source;
+			sourceTree = "<group>";
+		};
+		24B5BACF0AEAC95300819B52 /* Hot keys and recorders */ = {
+			isa = PBXGroup;
+			children = (
+				24B5BAAD0AEAC93300819B52 /* HotKey */,
+				24B5BABB0AEAC94E00819B52 /* Shortcut Recorder */,
+			);
+			name = "Hot keys and recorders";
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Monocle */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				244235760A7AB978002223BA /* MonocleSpotlightSearchEngine-Info.plist */,
+			);
+			name = Monocle;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Monocle_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2490D7FA0D43FCA70034B32F /* cog-menu-small.tiff */,
+				2490D7A10D43F7390034B32F /* cog-menu.tiff */,
+				242282320A83EBCD007ECB88 /* left.png */,
+				24B5BCA20AEAD61800819B52 /* ShortcutRecorder.strings */,
+				242282330A83EBCD007ECB88 /* right.png */,
+				24B60BCB0B7E8943004F07C9 /* general.tiff */,
+				240212130B7D1CF200669728 /* engines-icon.png */,
+				242282380A83F0FA007ECB88 /* cog-menu-old.png */,
+				242282360A83EDC7007ECB88 /* cog.tiff */,
+				243129590D22C2C4005DE6D9 /* frontier-up.png */,
+				2431295A0D22C2C4005DE6D9 /* frontier.png */,
+				2431293E0D22B235005DE6D9 /* stick.png */,
+				248260FF0C36FAC50046688D /* results.html */,
+				248260F30C36F8AA0046688D /* json.js */,
+				24990B280B80E5DD005DC9C4 /* Default search engines */,
+				24BC0F1F0A979369001FE0E9 /* Monocle.icns */,
+				246AFBD10A68473900AD447B /* add_disabled.tiff */,
+				240062FA0CFE1AB1009F92E6 /* Add.tiff */,
+				240062FB0CFE1AB1009F92E6 /* Advanced.tiff */,
+				240062FC0CFE1AB1009F92E6 /* GoBack.tiff */,
+				240062FD0CFE1AB1009F92E6 /* PreferencesGeneral.tiff */,
+				240062FE0CFE1AB1009F92E6 /* GoForward.tiff */,
+				240062FF0CFE1AB1009F92E6 /* Action.tiff */,
+				240063000CFE1AB1009F92E6 /* ColorPanel.tiff */,
+				240063010CFE1AB1009F92E6 /* Remove.tiff */,
+				246AFBD20A68473900AD447B /* add_idle.tiff */,
+				24B8A6AA103F40A100F5A56F /* GoogleSuggestExtract.js */,
+				246AFBD30A68473900AD447B /* add_pressed.tiff */,
+				246AFBD40A68473900AD447B /* remove_disabled.tiff */,
+				246AFBD50A68473900AD447B /* remove_idle.tiff */,
+				246AFBD60A68473900AD447B /* remove_pressed.tiff */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				246AFBDD0A68476D00AD447B /* SearchingPrefs.nib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2420E4F30D416AAF0059D146 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2420E4F40D416AB10059D146 /* MonocleSuggestionProviding_PublicAPI.h in Headers */,
+				246BEA9A1137475200D6BB79 /* BSJSONEncoder.h in Headers */,
+				246BEA9C1137475200D6BB79 /* NSArray+BSJSONAdditions.h in Headers */,
+				246BEA9E1137475200D6BB79 /* NSDictionary+BSJSONAdditions.h in Headers */,
+				246BEAA01137475200D6BB79 /* NSScanner+BSJSONAdditions.h in Headers */,
+				246BEAA21137475200D6BB79 /* NSString+BSJSONAdditions.h in Headers */,
+				246563251227166E003BA255 /* GTMNSString+HTML.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Monocle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Monocle" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				24990B640B80E8D3005DC9C4 /* CopyFiles */,
+				2420E4F30D416AAF0059D146 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Monocle;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Monocle;
+			productReference = 8D1107320486CEB800E47090 /* Monocle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Monocle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Monocle */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Monocle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				246AFBD70A68473900AD447B /* add_disabled.tiff in Resources */,
+				246AFBD80A68473900AD447B /* add_idle.tiff in Resources */,
+				24B8A6AD103F40B500F5A56F /* GoogleSuggestExtract.js in Resources */,
+				246AFBD90A68473900AD447B /* add_pressed.tiff in Resources */,
+				246AFBDA0A68473900AD447B /* remove_disabled.tiff in Resources */,
+				246AFBDB0A68473900AD447B /* remove_idle.tiff in Resources */,
+				246AFBDC0A68473900AD447B /* remove_pressed.tiff in Resources */,
+				246AFBDF0A68476D00AD447B /* SearchingPrefs.nib in Resources */,
+				24D262FB0A8010C100B6CA39 /* Wikipedia.tiff in Resources */,
+				24D262FC0A8010C100B6CA39 /* Google.tiff in Resources */,
+				242282340A83EBCD007ECB88 /* left.png in Resources */,
+				242282350A83EBCE007ECB88 /* right.png in Resources */,
+				242282370A83EDC7007ECB88 /* cog.tiff in Resources */,
+				242282390A83F0FB007ECB88 /* cog-menu-old.png in Resources */,
+				24BC0F200A979369001FE0E9 /* Monocle.icns in Resources */,
+				248261A80C37040B0046688D /* json.js in Resources */,
+				248261000C36FAC50046688D /* results.html in Resources */,
+				24B5BCA40AEAD61800819B52 /* ShortcutRecorder.strings in Resources */,
+				240212140B7D1CF200669728 /* engines-icon.png in Resources */,
+				24B60BCC0B7E8943004F07C9 /* general.tiff in Resources */,
+				24990B260B80E5D8005DC9C4 /* Yahoo.tiff in Resources */,
+				240063020CFE1AB1009F92E6 /* Add.tiff in Resources */,
+				240063030CFE1AB2009F92E6 /* Advanced.tiff in Resources */,
+				240063040CFE1AB2009F92E6 /* GoBack.tiff in Resources */,
+				240063050CFE1AB2009F92E6 /* PreferencesGeneral.tiff in Resources */,
+				240063060CFE1AB2009F92E6 /* GoForward.tiff in Resources */,
+				240063070CFE1AB2009F92E6 /* Action.tiff in Resources */,
+				240063080CFE1AB2009F92E6 /* ColorPanel.tiff in Resources */,
+				240063090CFE1AB2009F92E6 /* Remove.tiff in Resources */,
+				2431293F0D22B235005DE6D9 /* stick.png in Resources */,
+				2431295B0D22C2C4005DE6D9 /* frontier-up.png in Resources */,
+				2431295C0D22C2C4005DE6D9 /* frontier.png in Resources */,
+				2490D7A20D43F7390034B32F /* cog-menu.tiff in Resources */,
+				2490D7FB0D43FCA70034B32F /* cog-menu-small.tiff in Resources */,
+				24B7F5C5105C371A005DE273 /* Bing.tiff in Resources */,
+				24B7F5C7105C3724005DE273 /* YouTube.tiff in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				249C7FB80A44634A00769DCD /* MonocleController.m in Sources */,
+				249C803F0A44711900769DCD /* DrawingExtras.m in Sources */,
+				249C81850A447FD100769DCD /* MonocleSearchWindow.m in Sources */,
+				246AFBEB0A68501A00AD447B /* MonoclePreferenceController.m in Sources */,
+				2478F1E60A72CEE30039E956 /* MonocleSearchView.m in Sources */,
+				2478F3BB0A72DAB70039E956 /* CTGradient.m in Sources */,
+				24A4377F0A7753690090E155 /* MonocleSearchField.m in Sources */,
+				243E164C0A77FBD8007B0516 /* MonocleSuggestionProviding.m in Sources */,
+				2422C06C0A7D2A1900956D86 /* NSEventMonocleExtensions.m in Sources */,
+				2422C1D50A7D4E9400956D86 /* MonocleEngineArrayController.m in Sources */,
+				2422824C0A8405F3007ECB88 /* HTMLLikeTag.m in Sources */,
+				2422824D0A8405F6007ECB88 /* HTML5Parser.m in Sources */,
+				2422824E0A8405F6007ECB88 /* LoadController.m in Sources */,
+				24E2E0300A90A0D6006CC71B /* MonocleGreyTextFieldCell.m in Sources */,
+				24B5BAB80AEAC93300819B52 /* PTHotKey.m in Sources */,
+				24B5BAB90AEAC93300819B52 /* PTHotKeyCenter.m in Sources */,
+				24B5BABA0AEAC93300819B52 /* PTKeyCombo.m in Sources */,
+				24C648530B640A5C00A1985E /* MGViewAnimation.m in Sources */,
+				24C648890B640CCE00A1985E /* MonocleStatusItem.m in Sources */,
+				246F9F900B751C4C00888B4F /* MonocleGlassIconDrawing.m in Sources */,
+				24420F730B76892B00B1ED17 /* NSColor+ContrastingLabelExtensions.m in Sources */,
+				24055A2F0B7BA13C00BC262C /* MonocleWashDrawing.m in Sources */,
+				24B60A650B7E6A5B004F07C9 /* MonocleColorSwatchCell.m in Sources */,
+				24B60AFF0B7E6F3A004F07C9 /* MonocleWebKitGenericSiteIconAcquiring.m in Sources */,
+				245F54460B8353FE00EC35E6 /* MonoclePreferences.m in Sources */,
+				24F4AD8B0B85103100044621 /* MonocleFieldEditor.m in Sources */,
+				24EE308F0B9E3A590059F453 /* MonocleEncoding.m in Sources */,
+				24874CED0C1B4A6800B66EFE /* MonocleReorderableArrayController.m in Sources */,
+				248260F40C36F8AA0046688D /* json.js in Sources */,
+				2400DB8A0D108BBD005B047E /* MonocleGreyGradientView.m in Sources */,
+				2400DC340D10A2D6005B047E /* MonocleButtonBarStuff.m in Sources */,
+				24CD9F360D11E5AE00A317B5 /* MonocleBarButtonCell.m in Sources */,
+				24CD9F390D11F49300A317B5 /* MonocleBarButton.m in Sources */,
+				24CD8B1B0D301BD7005E55F1 /* CocoaAdditions.m in Sources */,
+				24D357F80D37E97A002FD803 /* SRRecorderControl.m in Sources */,
+				24D357F90D37E97A002FD803 /* SRRecorderCell.m in Sources */,
+				24D357FA0D37E97A002FD803 /* SRCommon.m in Sources */,
+				24D357FB0D37E97A002FD803 /* SRValidator.m in Sources */,
+				24D357FC0D37E97A002FD803 /* SRKeyCodeTransformer.m in Sources */,
+				24B8A6AB103F40A100F5A56F /* GoogleSuggestExtract.js in Sources */,
+				246BEA9B1137475200D6BB79 /* BSJSONEncoder.m in Sources */,
+				246BEA9D1137475200D6BB79 /* NSArray+BSJSONAdditions.m in Sources */,
+				246BEA9F1137475200D6BB79 /* NSDictionary+BSJSONAdditions.m in Sources */,
+				246BEAA11137475200D6BB79 /* NSScanner+BSJSONAdditions.m in Sources */,
+				246BEAA31137475200D6BB79 /* NSString+BSJSONAdditions.m in Sources */,
+				246563261227166E003BA255 /* GTMNSString+HTML.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		246AFBDD0A68476D00AD447B /* SearchingPrefs.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				246AFBDE0A68476D00AD447B /* English */,
+			);
+			name = SearchingPrefs.nib;
+			sourceTree = "<group>";
+		};
+		24B5BCA20AEAD61800819B52 /* ShortcutRecorder.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24B5BCA30AEAD61800819B52 /* English */,
+			);
+			name = ShortcutRecorder.strings;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/WebKit.framework/Versions/A/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/WebKit.framework/Versions/A/Frameworks\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Monocle;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/WebKit.framework/Versions/A/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/WebKit.framework/Versions/A/Frameworks\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Monocle;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx10.8;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Monocle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Monocle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

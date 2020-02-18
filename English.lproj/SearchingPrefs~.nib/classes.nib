@@ -1,0 +1,133 @@
+{
+    IBClasses = (
+        {CLASS = DragToReorderTableView; LANGUAGE = ObjC; SUPERCLASS = NSTableView; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = HTML5Parser; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                answerTar = id; 
+                emitted = NSTextView; 
+                parseFodder = NSTextView; 
+                pi = NSProgressIndicator; 
+                tickRoof = NSSlider; 
+                tickRoofLabel = NSTextField; 
+                ticks = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = HTMLString; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                addClicked = id; 
+                goToWebsite = id; 
+                segControlClicked = id; 
+                selectLoc = id; 
+                showInstructions = id; 
+                viewEngineInfo = id; 
+            }; 
+            CLASS = LoadController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                addButton = NSButton; 
+                advancedParser = HTML5Parser; 
+                cogMenuButton = NSPopUpButton; 
+                discPageIcon = NSImageView; 
+                discSearchEngine = NSTextField; 
+                discSearchURL = NSTextField; 
+                discVerbIndicator = NSTextField; 
+                discoveredEnginesPopup = NSPopUpButton; 
+                engineController = MonocleEngineArrayController; 
+                pageIcon = NSImageView; 
+                reloadMenuItem = NSMenuItem; 
+                searchEngine = NSTextField; 
+                stopMenuItem = NSMenuItem; 
+                urlField = NSTextField; 
+                webView = WebView; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            CLASS = MonocleColorSwatchCell; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSTextFieldCell; 
+        }, 
+        {
+            ACTIONS = {bringUp = id; searchWithClipboard = id; showPrefs = id; }; 
+            CLASS = MonocleController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {searchView = MonocleSearchView; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = MonocleEngineArrayController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {postDragDelegate = id; }; 
+            SUPERCLASS = NSArrayController; 
+        }, 
+        {
+            CLASS = MonocleGreyTextFieldCell; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSTextFieldCell; 
+        }, 
+        {
+            ACTIONS = {
+                cancelAddSheet = id; 
+                changePanel = id; 
+                closeDiscoverSheet = id; 
+                closeEditSheet = id; 
+                saveAddSheet = id; 
+                showAddSheet = id; 
+                showDiscoverSheet = id; 
+                showEditSheet = id; 
+                showHelp = id; 
+                statusItemStyleChanged = id; 
+            }; 
+            CLASS = MonoclePreferenceController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                addSheet = NSPanel; 
+                addSheetEditingPlaceholder = NSView; 
+                addSpecial = NSPopUpButton; 
+                appearanceView = NSView; 
+                callwordFormatField = NSTokenField; 
+                discoverSheet = NSPanel; 
+                editSheet = NSPanel; 
+                editSheetEditingPlaceholder = NSView; 
+                editingView = NSView; 
+                engineController = MonocleEngineArrayController; 
+                enginesTable = NSTableView; 
+                enginesView = NSView; 
+                helpButton = NSButton; 
+                helpButtonView = NSView; 
+                hotKeyRecorder = SRRecorderControl; 
+                mainWindow = NSWindow; 
+                searchHelperController = MonocleReorderableArrayController; 
+                searchHelpersTable = NSTableView; 
+                searchingView = NSView; 
+                statusItemStyle = NSPopUpButton; 
+                udc = NSUserDefaultsController; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            CLASS = MonocleReorderableArrayController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {postDragDelegate = id; }; 
+            SUPERCLASS = NSArrayController; 
+        }, 
+        {
+            CLASS = MonocleWashView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {monoclePreferenceController = MonoclePreferenceController; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            ACTIONS = {checkForUpdates = id; }; 
+            CLASS = SUUpdater; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

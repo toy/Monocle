@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--    <link rel="stylesheet" href="foo.css" /> -->
+  </head>
+  <body>
+  
+<h2>Search Engines in Monocle</h2>
+
+<p>In the Monocle preferences, the key <code>engines</code> stores an array of dictionaries. Every dictionary in this array is an engine. This dictionary dictates the engine's properties as a series of key-value pairs.</p>
+
+<p>An engine may be supported by the built-in Monocle logic and simply be a URL-based engine, or it may provide its own logic in a plugin, possibly working with  custom-defined properties, to provide searching or launching beyond the scope or capabilities of the original Monocle concept.</p>
+
+<p>
+</p>
+
+<h2>Supported properties</h2>
+
+<h3>Legend</h3>
+
+<p><code>(m)</code> = mandatory. Anything that's not specifically marked as mandatory is <em>optional</em>. If the property is not mandatory, a "Default value" marker tells you what the default value this property might have. (If this is <code>nil</code>, this represents the lack of a value.) </p>
+
+<p><code>"Type: x"</code> = specifies of what type the property value is in. Anything else than <code>string</code>, <code>int</code>, <code>float</code>, <code>bool</code>, <code>array</code> or <code>dict</code> is presumed to be archived in an <code>NSData</code> object, and <code>x</code> is presumed to be the class name of the unarchived object. (The other types are storable without archiving trickery inside standard Mac OS X property lists, and will map to standard Cocoa classes.)</p>
+
+<p>Any keys marked with <code>(i)</code> pertain to general implementation details, and any keys marked with <code>(ui)</code> especially pertain to the appearence of the engine in ways that are not crucial to the implementation of searching. If at all possible, you should leave these keys alone.</p>
+
+<h3>Core properties</h3>
+
+<dl>
+<dt><a name="b_name"></a><code>name</code> (m)</dt>
+<dd><b>Type:</b> string</dd>
+<dd><p>    The engine's name.</p></dd>
+
+<dt><a name="b_type"></a><code>type</code> (m) (i)</dt>
+<dd><b>Type:</b> string</dd>
+<dd><p>    The type of engine.</p>
+    <p>There are two built-in types: <code>GET</code> and <code>POST</code>, which both signify HTTP queries using the respective verb.</p>
+    <p>The type is extensible: any other type is interpreted as the bundle identifier for an engine plugin. For more information, read <code>Plugins</code> later on.</p></dd>
+
+<dt><a name="b_extraInfo"></a><code>extraInfo</code> (i)</dt>
+<dd><b>Type:</b> string</dd>
+<dd><b>Default value:</b> <code>nil</code></dd>    
+<dd><p>Additional info about the engine, intended as a commentary field for Monocle users.</p>
+<p>For distribution of engine sets (including presets), it's considered good practice to set this to a very brief explanatory text describing the search engine.</p></dd>
+</dl>
+
+<h3>Appearence properties</h3>
+
+<dl>
+<dt><a name="b_icon"></a><code>icon</code> (ui)</dt>
+<dd><b>Type:</b> <code>NSImage</code></dd>
+<dd><b>Default value:</b> <code>nil</code></dd>
+<dd><p>An icon associated with the engine. It's considered good practice to assign the `favicon` of the search engine, if at all possible. The icon is always available for modification by the user.</p></dd>
+
+<dt><a name="b_color"></a><code>color</code> (ui)</dt>
+<dd><b>Type:</b> <code>NSColor</code></dd>
+<dd><b>Default value:</b> <code>nil</code></dd>
+<dd><p>A color associated with the engine. It's considered good practice to never assign a color for a search engine. The color is always available for modification by the user.</p>
+<p>The color shows up as an icon chiefly based on the color. The exact appearence of this generated icon may change depending on other properties, other preferences and the exact version of Monocle.</p>
+<p>If a color co-exists with an icon (as specified by <code><a href="#b_icon">icon</a></code>), the final appearence of the engine's icon will be determined by <code><a href="#b_meshBadging">meshBadging</a></code>.</p></dd>
+
+<dt><a name="b_meshBadging"></a><code>meshBadging</code> (ui)</dt>
+<dd><b>Type:</b> bool</dd>
+<dd><b>Default value:</b> <code>YES</code></dd>
+<dd><p>If <code>YES</code>, specifies that the color specified with <code><a href="#b_color">color</a></code> should be badged on top of any possible <code><a href="#b_icon">icon</a></code> in the bottom right quadrant. (If <code>NO</code>, the color will just tint the image.)</p>
+<p>This property doesn't do anything if either the color or icon are missing.
+</p></dd>
+</dl>
+
+<h3>GET properties</h3>
+
+<dl>
+<dt><a name="b_get_URL"></a><code>get_URL</code> (i) ((m) for GET or POST type engines)</dt>
+<dd><b>Type:</b> string</dd>
+<dd><p>The URL to the search engine. <code>%@</code> is replaced by the encoded search query according to the rules in <code><a href="#b_get_transmutation">get_transmutation</a></code>.</dd>
+
+<dt><a name="b_get_transmutation"></a><code>get_transmutation</code> (i)</dt>
+<dd><b>Type:</b> string</dd>
+<dd><b>Default value:</b> <code>percent</code></dd>
+<dd><p>The routine used to encode spaces when encoding the search query for injection into the URL. One of the following:</p>
+<dl>
+    <dt><a name="b_percent"></a><code>percent</code></dt><dd>Ordinary URL percent encoding.</dd>
+    <dt><a name="b_underscore"></a><code>underscore</code></dt><dd>Every space is replaced by the <code>_</code> character - the rest uses ordinary URL percent encoding.</dd>
+</dl></dd>
+</dl>
+
+<h3>POST properties</h3>
+
+<p>All GET properties are also valid for POST engines. Note that a valid POST engine must have the GET property <code><a href="#b_get_URL">get_URL</a></code>. See <code>GET properties</code> above.</p>
+
+<dl>
+<dt><a name="b_post_data"></a><code>post_data</code></dt>
+<dd><b>Type:</b> dict</dd>
+<dd><b>Default value:</b> <code>nil</code></dd>
+<dd><p>If given, contains a dictionary of key/value pairs to be passed as POST data. <code>%@</code> in any value will be replaced by the encoded search query according to the rules in <code><a href="#b_get_transmutation">get_transmutation</a></code>.</p>
+<p>This key is not mandatory (m) since some engines may potentially require the POST method but pass data through the `get_URL` property.</p>
+</dd>
+</dl>
+
+<h2>Plugins</h2>
+
+<p>All plugins subclass the <code>MonocleSearchEngine</code> class and mark this as the principal class in a <code>.searchPlugin</code> bundle. (To be effective, this bundle is then placed in <code>Library/Application Support/Monocle</code> in any of the domains, or inside the <code>Plug-ins</code> folder of Monocle's internal <code>Contents</code> folder.)</p>
+
+<p>Plugins have two tools at their disposal to work. The first is replying to the predefined methods of the <code>MonocleSearchEngine</code> class to answer questions about how the engine behaves (such as how many engines using the plugin can be added, how the engine edit interface for the unique features your plugin brings (if any) looks and works, and performing the actual searching when asked to). The second is reading to and writing from the individual engine dictionaries in order to configure the engine.</p>
+
+<p>A shipping example of a plugin is the bundled Spotlight plugin, for which source is available.</p>
+
+<h3>Info.plist keys and build settings</h3>
+<p>It takes very little to prepare your search engine plugin. Follow these steps:</p>
+
+<ol>
+<li>Make a new project - or a new target in an existing project - of the type <b>Cocoa Loadable Bundle</b> in Xcode.</li>
+<li>Double-click the target in the Groups and Files list to bring up the inspector.</li>
+<li>Under the Build tab, make sure the target <em>builds for both PowerPC and Intel</em> under at the very least the Release build configuration (unless the plugin makes sense of technologies only present in one version of the OS). This will also require you to set the SDK to 10.4 Universal.</li>
+<li>Still under the Build tab, make sure the <b>Wrapper Extension</b> setting (<code>WRAPPER_EXTENSION</code>) is set to "searchPlugin".</li>
+<li>Now switch to the Properties tab, change the <b>Identifier</b> to a unique and fitting bundle identifier, and also change the <b>Principal Class</b> to the class name you will be using. Keep the <b>Main Nib File</b> field empty - any NIB loading will be handled by Monocle and your plugin in tandem.</li>
+<li>Close the inspector and open the Info.plist for your target (which might not be named Info.plist in the Groups and Files list if you have other targets). Insert a new entry with the key <code>MonocleSearchEngineKind</code>. This value (a string) should be the phrase for the kind of engine that your search plugin vends. This is specified in the Info.plist file to avoid loading all search plugins before they're needed.</li>
+</ol>
+
+<h3>Plugin-specific property guidelines</h3>
+
+<p>The properties must start with a version of the bundle identifier that exchanges all <code>.</code> characters for <code>_</code> characters (to not disrupt key-value coding). Between this bungled bundle identifier and the property key will be <code>__</code> - that is two <code>_</code> characters.</p>
+
+<p>For example, if Apple was to make a Spotlight Monocle plugin, their bundle identifier might look like this:</p>
+
+<p><code>com.apple.spotlight.monocle-plugin</code></p>
+
+<p>If they were to have a setting called <code>allowPDFs</code>, their property key would look like this:</p>
+
+<p><code>com_apple_spotlight_monocle-plugin__allowPDFs</code></p>
+
+<p>Prefixing the bundle identifier is dementrial to the aesthetics of the property key (ie: it makes it look ugly) but it prevents mixups and is therefore needed.</p>
+
+<p>Plugins may describe as many properties as they'd like, but a plugin should always strive to have as few as is possible to do a good job.</p>
+  </body>
+</html>

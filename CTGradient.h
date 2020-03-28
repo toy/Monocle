@@ -2,10 +2,10 @@
 //  CTGradient.h
 //
 //  Created by Chad Weider on 12/3/05.
-//  Copyright (c) 2005 Cotingent.
+//  Copyright (c) 2006 Cotingent.
 //  Some rights reserved: <http://creativecommons.org/licenses/by/2.5/>
 //
-//  Version: 1.1
+//  Version: 1.5
 
 #import <Cocoa/Cocoa.h>
 
@@ -17,10 +17,18 @@ typedef struct _CTGradientElement
 	struct _CTGradientElement *nextElement;
 	} CTGradientElement;
 
+typedef enum  _CTBlendingMode
+	{
+	CTLinearBlendingMode,
+	CTChromaticBlendingMode,
+	CTInverseChromaticBlendingMode
+	} CTGradientBlendingMode;
+
 
 @interface CTGradient : NSObject <NSCopying, NSCoding>
 	{
 	CTGradientElement* elementList;
+	CTGradientBlendingMode blendingMode;
 	
 	CGFunctionRef gradientFunction;
 	}
@@ -36,6 +44,9 @@ typedef struct _CTGradientElement
 + (id)unifiedPressedGradient;
 + (id)unifiedDarkGradient;
 
++ (id)rainbowGradient;
++ (id)hydrogenSpectrumGradient;
+
 + (id)sourceListSelectedGradient;
 + (id)sourceListUnselectedGradient;
 
@@ -45,7 +56,7 @@ typedef struct _CTGradientElement
 - (CTGradient *)removeColorStopAtIndex:(unsigned)index;
 - (CTGradient *)removeColorStopAtPosition:(float)position;
 
-
+- (CTGradientBlendingMode)blendingMode;
 - (NSColor *)colorStopAtIndex:(unsigned)index;
 - (NSColor *)colorAtPosition:(float)position;
 

@@ -176,10 +176,10 @@ static NSArray              *padKeysArray        = nil;
 	KeyboardLayoutKind currentLayoutKind;
     OSStatus err;
 	
-	err = KLGetCurrentKeyboardLayout( &currentLayoutRef );
+	err = -1;//KLGetCurrentKeyboardLayout( &currentLayoutRef );
     if (err != noErr) return nil;
 	
-	err = KLGetKeyboardLayoutProperty( currentLayoutRef, kKLKind,(const void **)&currentLayoutKind );
+	err = -1;//KLGetKeyboardLayoutProperty( currentLayoutRef, kKLKind,(const void **)&currentLayoutKind );
 	if ( err != noErr ) return nil;
     
 	UInt32 keysDown = 0;
@@ -188,7 +188,7 @@ static NSArray              *padKeysArray        = nil;
 	{
 		Handle kchrHandle;
         
-		err = KLGetKeyboardLayoutProperty( currentLayoutRef, kKLKCHRData, (const void **)&kchrHandle );
+		err = -1;//KLGetKeyboardLayoutProperty( currentLayoutRef, kKLKCHRData, (const void **)&kchrHandle );
 		if ( err != noErr ) return nil;
 		
 		UInt32 charCode = KeyTranslate( kchrHandle, keyCode, &keysDown );
@@ -204,7 +204,7 @@ static NSArray              *padKeysArray        = nil;
 	else // kKLuchrKind, kKLKCHRuchrKind
 	{
 		UCKeyboardLayout *keyboardLayout = NULL;
-		err = KLGetKeyboardLayoutProperty( currentLayoutRef, kKLuchrData, (const void **)&keyboardLayout );
+		err = -1;//KLGetKeyboardLayoutProperty( currentLayoutRef, kKLuchrData, (const void **)&keyboardLayout );
 		if ( err != noErr ) return nil;
 		
 		UniCharCount length = 4, realLength;

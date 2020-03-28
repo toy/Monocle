@@ -218,22 +218,22 @@ NSString *SRCharacterForKeyCodeAndCocoaFlags(signed short keyCode, unsigned int 
 	
 	CFMutableStringRef resultString;
 	
-    err = KLGetCurrentKeyboardLayout( &currentLayout );
+    err = -1;//KLGetCurrentKeyboardLayout( &currentLayout );
     if(err != noErr)
 		return FailWithNaiveString;
 	
-    err = KLGetKeyboardLayoutProperty( currentLayout, kKLKind, (const void **)&keyLayoutKind );
+    err = -1;//KLGetKeyboardLayoutProperty( currentLayout, kKLKind, (const void **)&keyLayoutKind );
     if (err != noErr)
 		return FailWithNaiveString;
 	
     if (keyLayoutKind == kKLKCHRKind) {
 		PUDNSLog(@"KCHR kind key layout");
-		err = KLGetKeyboardLayoutProperty( currentLayout, kKLKCHRData, (const void **)&KCHRData );
+		err = -1;//KLGetKeyboardLayoutProperty( currentLayout, kKLKCHRData, (const void **)&KCHRData );
 		if (err != noErr)
 			return FailWithNaiveString;
     } else {
 		PUDNSLog(@"uchr kind key layout");
-		err = KLGetKeyboardLayoutProperty( currentLayout, kKLuchrData, (const void **)&uchrData );
+		err = -1;//KLGetKeyboardLayoutProperty( currentLayout, kKLuchrData, (const void **)&uchrData );
 		if (err !=  noErr)
 			return FailWithNaiveString;
     }

@@ -50,7 +50,7 @@ static MonocleController *sharedInstance = nil;
 	NSUInteger *bufferPtr = NULL;
 	
 	// Also apply Exposé exemption.
-	HIWindowChangeAvailability((HIWindowRef)[window windowRef], kHIWindowExposeHidden, 0);
+	// HIWindowChangeAvailability((HIWindowRef)[window windowRef], kHIWindowExposeHidden, 0);
     
     [window setCollectionBehavior:mode];/*
 	

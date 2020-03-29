@@ -25,7 +25,10 @@
 + (BOOL)openResult:(NSString *)result usingProviderWithIdentifier:(NSString *)identifier;
 
 //+ (void)combinedResultsSuggestionsForString:(NSString *)string forJob:(unsigned int)job delegate:(id)delegate;
-+ (void)combinedResultsSuggestionsForString:(NSString *)string forJob:(unsigned int)job usingEngine:(id)engine delegate:(id)delegate;
++ (void)combinedResultsSuggestionsForString:(NSString *)string
+                                     forJob:(unsigned int)job
+                                usingEngine:(id)engine
+                                   delegate:(id)delegate;
 + (NSArray *)combinedResultsSuggestionsForString:(NSString *)string;
 + (NSArray *)combinedResultsForString:(NSString *)string;
 + (NSArray *)combinedSuggestionsForString:(NSString *)string;
@@ -44,15 +47,15 @@
 @end
 
 @interface MonocleSuggestionProviderFromSpellChecker : MonocleSuggestionProvider <MonocleSuggestionProviding> {
-	NSSpellChecker *spc;
+  NSSpellChecker *spc;
 }
 @end
 
-@interface MonocleSuggestionProviderFromGoogle : MonocleSuggestionProvider <MonocleResultProviding, MonocleSuggestionProviding> {
-	WebView *webView;
-	NSString *lastSuggestionsResult;
+@interface MonocleSuggestionProviderFromGoogle
+  : MonocleSuggestionProvider <MonocleResultProviding, MonocleSuggestionProviding> {
+  WebView *webView;
+  NSString *lastSuggestionsResult;
 }
 @end
 @interface MonocleSuggestionProviderFromYahoo : MonocleSuggestionProvider
 @end
-

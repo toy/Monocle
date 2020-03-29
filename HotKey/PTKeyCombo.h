@@ -8,20 +8,19 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PTKeyCombo : NSObject <NSCopying>
-{
-	int	mKeyCode;
-	unsigned int	mModifiers;
+@interface PTKeyCombo : NSObject <NSCopying> {
+  int mKeyCode;
+  unsigned int mModifiers;
 }
 
 + (id)clearKeyCombo;
-+ (id)keyComboWithKeyCode: (int)keyCode modifiers: (unsigned int)modifiers;
-- (id)initWithKeyCode: (int)keyCode modifiers: (unsigned int)modifiers;
++ (id)keyComboWithKeyCode:(int)keyCode modifiers:(unsigned int)modifiers;
+- (id)initWithKeyCode:(int)keyCode modifiers:(unsigned int)modifiers;
 
-- (id)initWithPlistRepresentation: (id)plist;
+- (id)initWithPlistRepresentation:(id)plist;
 - (id)plistRepresentation;
 
-- (BOOL)isEqual: (PTKeyCombo*)combo;
+- (BOOL)isEqual:(PTKeyCombo*)combo;
 
 - (int)keyCode;
 - (unsigned int)modifiers;

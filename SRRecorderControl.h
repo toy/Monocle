@@ -14,9 +14,8 @@
 #import <Cocoa/Cocoa.h>
 #import "SRRecorderCell.h"
 
-@interface SRRecorderControl : NSControl
-{
-	IBOutlet id delegate;
+@interface SRRecorderControl : NSControl {
+  IBOutlet id delegate;
 }
 
 #pragma mark *** Aesthetics ***
@@ -77,6 +76,9 @@
 
 // Delegate Methods
 @interface NSObject (SRRecorderDelegate)
-- (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder isKeyCode:(signed short)keyCode andFlagsTaken:(unsigned int)flags reason:(NSString **)aReason;
+- (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder
+               isKeyCode:(signed short)keyCode
+           andFlagsTaken:(unsigned int)flags
+                  reason:(NSString **)aReason;
 - (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo;
 @end

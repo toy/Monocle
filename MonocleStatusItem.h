@@ -11,9 +11,9 @@
 @class MonocleController;
 
 @interface MonocleStatusItem : NSObject {
-	NSStatusItem *statusItem;
-	NSStatusItem *debugSpacingStatusItem;
-	IBOutlet MonocleController *monocleController;
+  NSStatusItem *statusItem;
+  NSStatusItem *debugSpacingStatusItem;
+  IBOutlet MonocleController *monocleController;
 }
 - (NSStatusItem *)statusItem;
 - (void)bringUp;
@@ -22,17 +22,17 @@
 @end
 
 @interface MonocleStatusItemView : NSView {
-	MonocleStatusItem *context;
-	BOOL isClicked;
-	NSWindow *shim;
-	NSViewAnimation *animation;
-	BOOL animationDirectionIsShowing;
-	
-	BOOL hasCachedPanelHeight;
-	float panelHeight;
-	
-	NSImage *icon;
-	NSImage *selectedIcon;
+  MonocleStatusItem *context;
+  BOOL isClicked;
+  NSWindow *shim;
+  NSViewAnimation *animation;
+  BOOL animationDirectionIsShowing;
+
+  BOOL hasCachedPanelHeight;
+  float panelHeight;
+
+  NSImage *icon;
+  NSImage *selectedIcon;
 }
 - (void)setContext:(MonocleStatusItem *)ctx;
 - (void)bringUp;

@@ -13,4 +13,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SRKeyCodeTransformer : NSValueTransformer {} @end
+@interface SRKeyCodeTransformer : NSValueTransformer {
+}
+@end

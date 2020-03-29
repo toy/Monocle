@@ -10,8 +10,8 @@
 
 @class RSS, SUAppcastItem;
 @interface SUAppcast : NSObject {
-	NSArray *items;
-	id delegate;
+  NSArray *items;
+  id delegate;
 }
 
 - (void)fetchAppcastFromURL:(NSURL *)url;

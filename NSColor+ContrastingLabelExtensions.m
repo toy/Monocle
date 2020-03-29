@@ -8,19 +8,17 @@
 
 #import "NSColor+ContrastingLabelExtensions.h"
 
-
 @implementation NSColor (ContrastingLabelExtensions)
 
-- (NSColor *)contrastingLabelColor
-{
-    NSColor *rgbColor = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
-    if (!rgbColor) { // happens if the colorspace couldn't be converted
-        return [NSColor blackColor];
-    }
-    
-    float avgGray = ([rgbColor redComponent] + [rgbColor greenComponent] + [rgbColor blueComponent]) / 3.0;
-    
-    return (avgGray >= 0.5) ? [NSColor blackColor] : [NSColor whiteColor];
+- (NSColor *)contrastingLabelColor {
+  NSColor *rgbColor = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
+  if (!rgbColor) {  // happens if the colorspace couldn't be converted
+    return [NSColor blackColor];
+  }
+
+  float avgGray = ([rgbColor redComponent] + [rgbColor greenComponent] + [rgbColor blueComponent]) / 3.0;
+
+  return (avgGray >= 0.5) ? [NSColor blackColor] : [NSColor whiteColor];
 }
 
 @end

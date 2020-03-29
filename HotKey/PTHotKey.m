@@ -13,103 +13,86 @@
 
 @implementation PTHotKey
 
-- (id)init
-{
-	return [self initWithIdentifier: nil keyCombo: nil];
+- (id)init {
+  return [self initWithIdentifier:nil keyCombo:nil];
 }
 
+- (id)initWithIdentifier:(id)identifier keyCombo:(PTKeyCombo*)combo {
+  self = [super init];
 
-- (id)initWithIdentifier: (id)identifier keyCombo: (PTKeyCombo*)combo
-{
-	self = [super init];
-	
-	if( self )
-	{
-		[self setIdentifier: identifier];
-		[self setKeyCombo: combo];
-	}
-	
-	return self;
+  if (self) {
+    [self setIdentifier:identifier];
+    [self setKeyCombo:combo];
+  }
+
+  return self;
 }
 
-- (void)dealloc
-{
-	[mIdentifier release];
-	[mName release];
-	[mKeyCombo release];
-	
-	[super dealloc];
+- (void)dealloc {
+  [mIdentifier release];
+  [mName release];
+  [mKeyCombo release];
+
+  [super dealloc];
 }
 
-- (NSString*)description
-{
-	return [NSString stringWithFormat: @"<%@: %@, %@>", NSStringFromClass( [self class] ), [self identifier], [self keyCombo]];
+- (NSString*)description {
+  return
+    [NSString stringWithFormat:@"<%@: %@, %@>", NSStringFromClass([self class]), [self identifier], [self keyCombo]];
 }
 
 #pragma mark -
 
-- (void)setIdentifier: (id)ident
-{
-	[ident retain];
-	[mIdentifier release];
-	mIdentifier = ident;
+- (void)setIdentifier:(id)ident {
+  [ident retain];
+  [mIdentifier release];
+  mIdentifier = ident;
 }
 
-- (id)identifier
-{
-	return mIdentifier;
+- (id)identifier {
+  return mIdentifier;
 }
 
-- (void)setKeyCombo: (PTKeyCombo*)combo
-{
-	if( combo == nil )
-		combo = [PTKeyCombo clearKeyCombo];	
+- (void)setKeyCombo:(PTKeyCombo*)combo {
+  if (combo == nil) combo = [PTKeyCombo clearKeyCombo];
 
-	[combo retain];
-	[mKeyCombo release];
-	mKeyCombo = combo;
+  [combo retain];
+  [mKeyCombo release];
+  mKeyCombo = combo;
 }
 
-- (PTKeyCombo*)keyCombo
-{
-	return mKeyCombo;
+- (PTKeyCombo*)keyCombo {
+  return mKeyCombo;
 }
 
-- (void)setName: (NSString*)name
-{
-	[name retain];
-	[mName release];
-	mName = name;
+- (void)setName:(NSString*)name {
+  [name retain];
+  [mName release];
+  mName = name;
 }
 
-- (NSString*)name
-{
-	return mName;
+- (NSString*)name {
+  return mName;
 }
 
-- (void)setTarget: (id)target
-{
-	mTarget = target;
+- (void)setTarget:(id)target {
+  mTarget = target;
 }
 
-- (id)target
-{
-	return mTarget;
+- (id)target {
+  return mTarget;
 }
 
-- (void)setAction: (SEL)action
-{
-	mAction = action;
+- (void)setAction:(SEL)action {
+  mAction = action;
 }
 
-- (SEL)action
-{
-	return mAction;
+- (SEL)action {
+  return mAction;
 }
 
-- (void)invoke
-{
-	[mTarget performSelector: mAction withObject: self];
+- (void)invoke {
+  [mTarget performSelector:mAction withObject:self];
 }
 
 @end

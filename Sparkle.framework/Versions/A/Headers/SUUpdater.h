@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 // Before you use Sparkle in your app, you must set SUFeedURL in Info.plist to the
-// address of the appcast on your webserver. If you don't already have an 
+// address of the appcast on your webserver. If you don't already have an
 // appcast, please see the Sparkle documentation to learn about how to set one up.
 
 // .zip, .dmg, .tar, .tbz, .tgz archives are supported at this time.
@@ -20,19 +20,19 @@
 
 @class SUAppcastItem, SUUpdateAlert, SUStatusController;
 @interface SUUpdater : NSObject {
-	SUAppcastItem *updateItem;
-	
-	SUStatusController *statusController;
-	SUUpdateAlert *updateAlert;
-	
-	NSURLDownload *downloader;
-	NSString *downloadPath;
-			
-	NSTimer *checkTimer;
-	NSTimeInterval checkInterval;	
-	
-	BOOL verbose;
-	BOOL updateInProgress;
+  SUAppcastItem *updateItem;
+
+  SUStatusController *statusController;
+  SUUpdateAlert *updateAlert;
+
+  NSURLDownload *downloader;
+  NSString *downloadPath;
+
+  NSTimer *checkTimer;
+  NSTimeInterval checkInterval;
+
+  BOOL verbose;
+  BOOL updateInProgress;
 }
 
 // This IBAction is meant for a main menu item. Hook up any menu item to this action,

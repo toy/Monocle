@@ -6,17 +6,16 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MGViewAnimation : NSAnimation
-{
-    NSMutableArray *_viewAnimations;
-    NSMutableArray *_views;
-	NSMutableDictionary *_fadeViews;
-	NSMutableDictionary *_fadeImages;
-	BOOL _continuouslyUpdatesFadingViews;
-	BOOL _ordersOutFadedWindows;
+@interface MGViewAnimation : NSAnimation {
+  NSMutableArray *_viewAnimations;
+  NSMutableArray *_views;
+  NSMutableDictionary *_fadeViews;
+  NSMutableDictionary *_fadeImages;
+  BOOL _continuouslyUpdatesFadingViews;
+  BOOL _ordersOutFadedWindows;
 }
 
-- (id)initWithViewAnimations:(NSArray*)viewAnimations;
+- (id)initWithViewAnimations:(NSArray *)viewAnimations;
 - (NSArray *)viewAnimations;
 - (void)setViewAnimations:(NSArray *)viewAnimations;
 

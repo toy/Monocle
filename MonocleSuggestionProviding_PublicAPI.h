@@ -6,9 +6,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
- 
+
 // How to implement a search help provider:
-// 
+//
 // * Create a subclass of MonocleSuggestionProvider - your "provider class".
 //   Your provider class will be used to dole out objects that actually
 //   provide *suggestions* and *results*. (In your provider class, if you
@@ -22,7 +22,7 @@
 //   +resultProvider.) Note that this can be an instance of your provider
 //   class or of some other class, it doesn't matter.
 // * MonocleSuggestionProviding and MonocleResultProviding both follow
-//   similar patterns: 
+//   similar patterns:
 //   * The ...Source method returns a very brief, localized string
 //     identifying your provider in log messages and grouping your
 //     suggestions/results in the search help list.
@@ -62,13 +62,13 @@
 // * Place your bundle in ~/Library/Application Support/Monocle/.
 
 typedef struct _MonocleProviderInfo {
-    NSImage *icon;
-    NSString *label;
-	
+  NSImage *icon;
+  NSString *label;
+
 } MonocleProviderInfo;
 
 @interface MonocleSuggestion : NSObject <NSCopying> {
-	NSString *suggestion;
+  NSString *suggestion;
 }
 - (NSString *)suggestion;
 - (void)setSuggestion:(NSString *)newSuggestion;
@@ -77,26 +77,30 @@ typedef struct _MonocleProviderInfo {
 @end
 
 @interface MonocleResult : NSObject <NSCopying> {
-    NSString *title;
-    NSString *description;
-    NSString *location;
-    NSString *url;	
+  NSString *title;
+  NSString *description;
+  NSString *location;
+  NSString *url;
 }
 /* The title is the main title shown for the result; like the document title of a web page. */
-- (NSString *) title;
-- (void) setTitle:(NSString *)newTitle;
+- (NSString *)title;
+- (void)setTitle:(NSString *)newTitle;
 
-/* The description contains a description of the result or nearby words matching the search query. The description is not currently exposed in the user interface but is set to appear in later versions of Monocle. */
-- (NSString *) description;
-- (void) setDescription:(NSString *)newDescription;
+/* The description contains a description of the result or nearby words matching the search query. The description is
+ * not currently exposed in the user interface but is set to appear in later versions of Monocle. */
+- (NSString *)description;
+- (void)setDescription:(NSString *)newDescription;
 
-/* The location contains a casual, short version of where the result is located. For web page results, this can be the host and a subdirectory. This helps disambiguate from other results. */
-- (NSString *) location;
-- (void) setLocation:(NSString *)newLocation;
+/* The location contains a casual, short version of where the result is located. For web page results, this can be the
+ * host and a subdirectory. This helps disambiguate from other results. */
+- (NSString *)location;
+- (void)setLocation:(NSString *)newLocation;
 
-/* The URL is very likely an actual URL; it is what is passed back when the result provider is asked to open the result. Since you can implement openResult: in any way you'd like, however, it could be any pertinent context data. The URL is never exposed in the user interface. */
-- (NSString *) url;
-- (void) setUrl:(NSString *)newUrl;
+/* The URL is very likely an actual URL; it is what is passed back when the result provider is asked to open the result.
+ * Since you can implement openResult: in any way you'd like, however, it could be any pertinent context data. The URL
+ * is never exposed in the user interface. */
+- (NSString *)url;
+- (void)setUrl:(NSString *)newUrl;
 @end
 
 @protocol MonocleSuggestionProviding

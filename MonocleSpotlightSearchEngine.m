@@ -8,7 +8,6 @@
 
 #import "MonocleSpotlightSearchEngine.h"
 
-
 @implementation MonocleSpotlightSearchEngine
 
 @end

@@ -8,20 +8,19 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface SUAppcastItem : NSObject {
-	NSString *title;
-	NSDate *date;
-	NSString *description;
-	
-	NSURL *releaseNotesURL;
-	
-	NSString *DSASignature;
-	NSString *MD5Sum;
-	
-	NSURL *fileURL;
-	NSString *fileVersion;
-	NSString *versionString;
+  NSString *title;
+  NSDate *date;
+  NSString *description;
+
+  NSURL *releaseNotesURL;
+
+  NSString *DSASignature;
+  NSString *MD5Sum;
+
+  NSURL *fileURL;
+  NSString *fileVersion;
+  NSString *versionString;
 }
 
 // Initializes with data from a dictionary provided by the RSS class.

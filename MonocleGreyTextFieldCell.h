@@ -2,7 +2,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MonocleGreyTextFieldCell : NSTextFieldCell
-{
+@interface MonocleGreyTextFieldCell : NSTextFieldCell {
 }
 @end

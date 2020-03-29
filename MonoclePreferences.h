@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface MonoclePreferences : NSObject
 + (void)registerDefaultPreferences:(NSDictionary *)dict;
 

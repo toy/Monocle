@@ -8,22 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
-typedef enum
-{
-	SUInstallUpdateChoice,
-	SURemindMeLaterChoice,
-	SUSkipThisVersionChoice
-} SUUpdateAlertChoice;
+typedef enum { SUInstallUpdateChoice, SURemindMeLaterChoice, SUSkipThisVersionChoice } SUUpdateAlertChoice;
 
 @class WebView, SUAppcastItem;
 @interface SUUpdateAlert : NSWindowController {
-	SUAppcastItem *updateItem;
-	id delegate;
-	
-	IBOutlet WebView *releaseNotesView;
-	IBOutlet NSTextField *description;
-	NSProgressIndicator *releaseNotesSpinner;
-	BOOL webViewFinishedLoading;
+  SUAppcastItem *updateItem;
+  id delegate;
+
+  IBOutlet WebView *releaseNotesView;
+  IBOutlet NSTextField *description;
+  NSProgressIndicator *releaseNotesSpinner;
+  BOOL webViewFinishedLoading;
 }
 
 - initWithAppcastItem:(SUAppcastItem *)item;

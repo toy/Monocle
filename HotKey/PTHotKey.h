@@ -9,30 +9,29 @@
 #import <Cocoa/Cocoa.h>
 #import "PTKeyCombo.h"
 
-@interface PTHotKey : NSObject
-{
-	NSString*		mIdentifier;
-	NSString*		mName;
-	PTKeyCombo*		mKeyCombo;
-	id				mTarget;
-	SEL				mAction;
+@interface PTHotKey : NSObject {
+  NSString* mIdentifier;
+  NSString* mName;
+  PTKeyCombo* mKeyCombo;
+  id mTarget;
+  SEL mAction;
 }
 
-- (id)initWithIdentifier: (id)identifier keyCombo: (PTKeyCombo*)combo;
+- (id)initWithIdentifier:(id)identifier keyCombo:(PTKeyCombo*)combo;
 - (id)init;
 
-- (void)setIdentifier: (id)ident;
+- (void)setIdentifier:(id)ident;
 - (id)identifier;
 
-- (void)setName: (NSString*)name;
+- (void)setName:(NSString*)name;
 - (NSString*)name;
 
-- (void)setKeyCombo: (PTKeyCombo*)combo;
+- (void)setKeyCombo:(PTKeyCombo*)combo;
 - (PTKeyCombo*)keyCombo;
 
-- (void)setTarget: (id)target;
+- (void)setTarget:(id)target;
 - (id)target;
-- (void)setAction: (SEL)action;
+- (void)setAction:(SEL)action;
 - (SEL)action;
 
 - (void)invoke;

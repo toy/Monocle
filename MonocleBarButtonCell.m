@@ -13,27 +13,27 @@
 
 @implementation MonocleBarButtonCell
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
-	[MonocleButtonBarStuff drawButtonBackgroundInRect:cellFrame image:[self image] view:controlView];
-	if ([self isHighlighted]) {
-		[[NSColor colorWithCalibratedWhite:0 alpha:0.3] set];
-		[NSBezierPath fillRect:cellFrame];
-	}
-//	[super drawWithFrame:cellFrame inView:controlView];
+  [MonocleButtonBarStuff drawButtonBackgroundInRect:cellFrame image:[self image] view:controlView];
+  if ([self isHighlighted]) {
+    [[NSColor colorWithCalibratedWhite:0 alpha:0.3] set];
+    [NSBezierPath fillRect:cellFrame];
+  }
+  //	[super drawWithFrame:cellFrame inView:controlView];
 }
 
 - (void)correctImage {
-	isInnerImageSetting = YES;
-	[self setImage:[MonocleButtonBarStuff brightenBlackImage:[self image]]];
-	isInnerImageSetting = NO;
+  isInnerImageSetting = YES;
+  [self setImage:[MonocleButtonBarStuff brightenBlackImage:[self image]]];
+  isInnerImageSetting = NO;
 }
 
 - (void)setImage:(NSImage *)image {
-	if (isInnerImageSetting) {
-		[super setImage:image];
-	} else {
-		[super setImage:image];
-		[self correctImage];
-	}
+  if (isInnerImageSetting) {
+    [super setImage:image];
+  } else {
+    [super setImage:image];
+    [self correctImage];
+  }
 }
 
 @end

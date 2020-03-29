@@ -8,15 +8,12 @@
 
 #import "MonocleSearchField.h"
 
-
 @implementation MonocleSearchField
 
-
-
 - (void)keyDown:(NSEvent *)theEvent {
-	NSLog(@"key down (SF): %@", theEvent);
-	
-	[super keyDown:theEvent];
+  NSLog(@"key down (SF): %@", theEvent);
+
+  [super keyDown:theEvent];
 }
 
 @end

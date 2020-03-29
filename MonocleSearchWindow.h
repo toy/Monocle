@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface MonocleSearchWindow : NSWindow {
-	BOOL showingAccordion;
+  BOOL showingAccordion;
 }
 
 @end

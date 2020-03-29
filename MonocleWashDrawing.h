@@ -11,7 +11,6 @@
 @class CTGradient;
 
 @interface MonocleWashDrawing : NSObject {
-
 }
 + (void)drawCurrentWashInRect:(NSRect)rect;
 + (void)drawBackgroundWash:(CTGradient *)gradient inFrame:(NSRect)rect;

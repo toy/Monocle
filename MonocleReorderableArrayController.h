@@ -12,9 +12,9 @@
 *** http://homepage.mac.com/mmalc/CocoaExamples/controllers.html **/
 
 @interface MonocleReorderableArrayController : NSArrayController {
-	id postDragDelegate;
-	BOOL cantSelectRow;
-	BOOL draggingTemporarilyDisabled;
+  id postDragDelegate;
+  BOOL cantSelectRow;
+  BOOL draggingTemporarilyDisabled;
 }
 - (void)setCanSelectRow:(BOOL)can;
 - (void)setCanDrag:(BOOL)can;
@@ -23,7 +23,6 @@
 - (void)registerTableViewToReceiveDrags:(NSTableView *)tv;
 
 - (void)setPostDragDelegate:(id)del;
-- (void)moveObjectsInArrangedObjectsFromIndexes:(NSIndexSet*)indexSet
-										toIndex:(unsigned int)insertIndex;
+- (void)moveObjectsInArrangedObjectsFromIndexes:(NSIndexSet *)indexSet toIndex:(unsigned int)insertIndex;
 - (int)rowsAboveRow:(int)row inIndexSet:(NSIndexSet *)indexSet;
 @end

@@ -10,7 +10,7 @@
 
 @class SUAppcastItem;
 @interface SUAutomaticUpdateAlert : NSWindowController {
-	SUAppcastItem *updateItem;
+  SUAppcastItem *updateItem;
 }
 
 - initWithAppcastItem:(SUAppcastItem *)item;

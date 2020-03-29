@@ -15,13 +15,12 @@ typedef unsigned int NSUInteger;
 #endif
 
 @class MonocleSearchView, MonocleSearchWindow, MonoclePreferenceController, PTHotKey, MonocleStatusItem;
-@interface MonocleController : NSObject
-{
-	MonocleSearchWindow *searchWindow;
-	IBOutlet MonocleSearchView *searchView;
-	MonoclePreferenceController *prefController;
-	PTHotKey *globalHotKey;
-	IBOutlet MonocleStatusItem *statusItem;
+@interface MonocleController : NSObject {
+  MonocleSearchWindow *searchWindow;
+  IBOutlet MonocleSearchView *searchView;
+  MonoclePreferenceController *prefController;
+  PTHotKey *globalHotKey;
+  IBOutlet MonocleStatusItem *statusItem;
 }
 
 + (MonocleController *)controller;
@@ -75,6 +74,6 @@ typedef unsigned int NSUInteger;
 @end
 
 @interface MonocleWashView : NSView {
-	IBOutlet MonoclePreferenceController *monoclePreferenceController;
+  IBOutlet MonoclePreferenceController *monoclePreferenceController;
 }
 @end

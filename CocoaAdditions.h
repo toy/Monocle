@@ -9,5 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface NSString (EscapeHTMLEntitiesExtension)
-- (NSString *) stringByHTMLEntityEscaping;
+- (NSString *)stringByHTMLEntityEscaping;
 @end

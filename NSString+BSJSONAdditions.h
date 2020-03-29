@@ -20,7 +20,6 @@ typedef unsigned int NSUInteger;
 #define NOTCOMPILEDONLEOPARD 1
 #endif
 
-
 @interface NSString (BSJSONAdditions)
 
 + (NSString *)jsonIndentStringForLevel:(int)level;

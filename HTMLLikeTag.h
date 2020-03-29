@@ -8,11 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface HTMLLikeTag : NSObject {
-	NSDictionary *attributes;
-	NSString *tagName;
-	BOOL closeTag;
+  NSDictionary *attributes;
+  NSString *tagName;
+  BOOL closeTag;
 }
 - (NSDictionary *)attributes;
 //- (NSDictionary *)dictRepresentation;

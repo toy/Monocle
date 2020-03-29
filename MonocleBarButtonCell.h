@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface MonocleBarButtonCell : NSButtonCell {
-	BOOL isInnerImageSetting;
+  BOOL isInnerImageSetting;
 }
 
 @end

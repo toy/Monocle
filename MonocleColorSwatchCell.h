@@ -2,8 +2,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MonocleColorSwatchCell : NSTextFieldCell
-{
-	NSMutableSet *observedObjects;
+@interface MonocleColorSwatchCell : NSTextFieldCell {
+  NSMutableSet *observedObjects;
 }
 @end

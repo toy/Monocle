@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define MonocleSearchEngineDefaultEncoding		@"UTF-8"
+#define MonocleSearchEngineDefaultEncoding @"UTF-8"
 
 @interface NSString (MonocleNSStringEncodingHelpers)
 + (NSStringEncoding)stringEncodingForIANA:(NSString *)iana;

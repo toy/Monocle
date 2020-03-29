@@ -54,8 +54,8 @@
 **
 ** If the engine is a debug engine and has properties, a
 ** rudimentary UI is provided to edit these properties
-** that currently have property list values - NSNumber, NSDate, 
-** NSData, NSString, NSArray and NSDictionary. 
+** that currently have property list values - NSNumber, NSDate,
+** NSData, NSString, NSArray and NSDictionary.
 **
 ** If the engine is not a debug engine and has properties, a
 ** message will be logged to the Console (to encourage proper

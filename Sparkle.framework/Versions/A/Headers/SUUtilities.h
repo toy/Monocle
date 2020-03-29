@@ -14,7 +14,7 @@ NSString *SUHostAppDisplayName();
 NSString *SUHostAppVersion();
 NSString *SUHostAppVersionString();
 
-NSComparisonResult SUStandardVersionComparison(NSString * versionA, NSString * versionB);
+NSComparisonResult SUStandardVersionComparison(NSString *versionA, NSString *versionB);
 
 // If running make localizable-strings for genstrings, ignore the error on this line.
 NSString *SULocalizedString(NSString *key, NSString *comment);

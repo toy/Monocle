@@ -9,10 +9,9 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 
-
 @interface MonocleWebKitGenericSiteIconAcquiring : NSObject {
-	WebView *wv;
-	NSImage *icon;
+  WebView *wv;
+  NSImage *icon;
 }
 - (void)start;
 + (void)startAcquiringImage;

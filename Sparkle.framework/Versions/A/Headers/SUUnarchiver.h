@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface SUUnarchiver : NSObject {
-	id delegate;
+  id delegate;
 }
 
 - (void)unarchivePath:(NSString *)path;

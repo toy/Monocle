@@ -11,12 +11,14 @@
 @class SUStatusChecker;
 
 @protocol SUStatusCheckerDelegate <NSObject>
-//versionString will be nil and isNewVersion will be NO if version checking fails.
-- (void)statusChecker:(SUStatusChecker *)statusChecker foundVersion:(NSString *)versionString isNewVersion:(BOOL)isNewVersion;
+// versionString will be nil and isNewVersion will be NO if version checking fails.
+- (void)statusChecker:(SUStatusChecker *)statusChecker
+         foundVersion:(NSString *)versionString
+         isNewVersion:(BOOL)isNewVersion;
 @end
 
 @interface SUStatusChecker : SUUpdater {
-	id<SUStatusCheckerDelegate> scDelegate;
+  id<SUStatusCheckerDelegate> scDelegate;
 }
 
 // Create a status checker which will notifiy delegate once the appcast version is determined.

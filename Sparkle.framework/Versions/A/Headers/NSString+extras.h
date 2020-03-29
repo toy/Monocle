@@ -9,13 +9,13 @@ Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
 *	Redistributions of source code must retain the above copyright notice,
-	this list of conditions and the following disclaimer.
+  this list of conditions and the following disclaimer.
 *	Redistributions in binary form must reproduce the above copyright notice,
-	this list of conditions and the following disclaimer in the documentation
-	and/or other materials provided with the distribution.
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
 *	Neither the name of ranchero.com or Brent Simmons nor the names of its
-	contributors may be used to endorse or promote products derived
-	from this software without specific prior written permission.
+  contributors may be used to endorse or promote products derived
+  from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -31,31 +31,27 @@ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMA
 
 */
 
-
 /*
-	NSString+extras.h
-	NetNewsWire
+  NSString+extras.h
+  NetNewsWire
 
-	Created by Brent Simmons on Fri Jun 14 2002.
-	Copyright (c) 2002 Brent Simmons. All rights reserved.
+  Created by Brent Simmons on Fri Jun 14 2002.
+  Copyright (c) 2002 Brent Simmons. All rights reserved.
 */
-
 
 #import <Foundation/Foundation.h>
 #import <CoreFoundation/CoreFoundation.h>
-
 
 @interface NSString (extras)
 
 - (NSString *)stringWithSubstitute:(NSString *)subs forCharactersFromSet:(NSCharacterSet *)set;
 
-- (NSString *) trimWhiteSpace;
+- (NSString *)trimWhiteSpace;
 
-- (NSString *) stripHTML;
+- (NSString *)stripHTML;
 
-- (NSString *) ellipsizeAfterNWords: (int) n;
+- (NSString *)ellipsizeAfterNWords:(int)n;
 
-+ (BOOL) stringIsEmpty: (NSString *) s;
-
++ (BOOL)stringIsEmpty:(NSString *)s;
 
 @end

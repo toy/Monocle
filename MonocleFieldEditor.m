@@ -8,11 +8,10 @@
 
 #import "MonocleFieldEditor.h"
 
-
 @implementation MonocleFieldEditor
 - (void)keyDown:(NSEvent *)theEvent {
-	NSLog(@"key down (FE): %@", theEvent);
-	
-	[super keyDown:theEvent];
+  NSLog(@"key down (FE): %@", theEvent);
+
+  [super keyDown:theEvent];
 }
 @end

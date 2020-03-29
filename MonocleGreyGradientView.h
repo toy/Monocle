@@ -11,7 +11,7 @@
 @class CTGradient;
 
 @interface MonocleGreyGradientView : NSView {
-	CTGradient *glassGradient;
+  CTGradient *glassGradient;
 }
 
 @end

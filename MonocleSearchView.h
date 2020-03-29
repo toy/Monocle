@@ -11,62 +11,60 @@
 
 @class MonocleController, MonocleSearchField;
 @interface MonocleSearchView : NSView {
-	
-	NSObject *currentSearchText_writerLock;
-	NSString *currentSearchText;
-	
-	MonocleController *controller;
-	IBOutlet MonocleSearchField *textField;
-	IBOutlet NSImageView *iconView;
-	IBOutlet NSPopUpButton *appMenuPopup;
-	IBOutlet NSArrayController *controlledEngines;
-	IBOutlet NSObjectController *selectedEngine;
-	
-	IBOutlet WebView *searchHelpWebView;
-	
-	NSWindow *borderlessSearchHelpWindow;
-	
-	unsigned int engineIndex;
-	NSString *engineName;
-	
-	BOOL isSearchViewShown;
-	
-	BOOL isUpdatingSearchhelp;
-	BOOL isDisplayingSearchhelp;
-	BOOL wantsToUpdateSearchhelp;
-	
-	BOOL anySearchHelp;
-	
-	NSViewAnimation *va;
-	NSPoint referencePoint;
-	
-	NSArray *referenceSelectedRanges;
-	
-	NSPopUpButtonCell *enginePopUpCell;
-	NSPopUpButtonCell *appPopUpCell;
-	
-	NSString *currentSearchhelpIsForString;
-	NSArray *currentSearchhelpResults;
-	NSMutableDictionary *draftSearchhelpResults;
-	NSString *draftSearchhelpIsForString;
-	NSArray *currentSearchhelpSuggestions;
-	unsigned int currentSearchhelpJob;
-	
-	NSDictionary *selectedSearchHelp;
-	
-	NSArray *displaySearchhelp;
-	
-	NSTimer *searchhelpTimer;
-	
-	NSColor *searchhelpTableGridColor;
-	
-	IBOutlet NSMenu *appMenu;
-	
-	BOOL callwordCacheNeedsRedoing;
-	BOOL hasSetSpacesBehavior;
-	
-	BOOL hideSearchHelpUntilBecomesActive;
-	
+  NSObject *currentSearchText_writerLock;
+  NSString *currentSearchText;
+
+  MonocleController *controller;
+  IBOutlet MonocleSearchField *textField;
+  IBOutlet NSImageView *iconView;
+  IBOutlet NSPopUpButton *appMenuPopup;
+  IBOutlet NSArrayController *controlledEngines;
+  IBOutlet NSObjectController *selectedEngine;
+
+  IBOutlet WebView *searchHelpWebView;
+
+  NSWindow *borderlessSearchHelpWindow;
+
+  unsigned int engineIndex;
+  NSString *engineName;
+
+  BOOL isSearchViewShown;
+
+  BOOL isUpdatingSearchhelp;
+  BOOL isDisplayingSearchhelp;
+  BOOL wantsToUpdateSearchhelp;
+
+  BOOL anySearchHelp;
+
+  NSViewAnimation *va;
+  NSPoint referencePoint;
+
+  NSArray *referenceSelectedRanges;
+
+  NSPopUpButtonCell *enginePopUpCell;
+  NSPopUpButtonCell *appPopUpCell;
+
+  NSString *currentSearchhelpIsForString;
+  NSArray *currentSearchhelpResults;
+  NSMutableDictionary *draftSearchhelpResults;
+  NSString *draftSearchhelpIsForString;
+  NSArray *currentSearchhelpSuggestions;
+  unsigned int currentSearchhelpJob;
+
+  NSDictionary *selectedSearchHelp;
+
+  NSArray *displaySearchhelp;
+
+  NSTimer *searchhelpTimer;
+
+  NSColor *searchhelpTableGridColor;
+
+  IBOutlet NSMenu *appMenu;
+
+  BOOL callwordCacheNeedsRedoing;
+  BOOL hasSetSpacesBehavior;
+
+  BOOL hideSearchHelpUntilBecomesActive;
 }
 - (MonocleController *)controller;
 - (void)setController:(MonocleController *)aController;

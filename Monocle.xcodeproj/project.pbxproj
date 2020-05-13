@@ -44,7 +44,7 @@
 		246AFBDA0A68473900AD447B /* remove_disabled.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBD40A68473900AD447B /* remove_disabled.tiff */; };
 		246AFBDB0A68473900AD447B /* remove_idle.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBD50A68473900AD447B /* remove_idle.tiff */; };
 		246AFBDC0A68473900AD447B /* remove_pressed.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBD60A68473900AD447B /* remove_pressed.tiff */; };
-		246AFBDF0A68476D00AD447B /* SearchingPrefs.nib in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBDD0A68476D00AD447B /* SearchingPrefs.nib */; };
+		246AFBDF0A68476D00AD447B /* SearchingPrefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246AFBDD0A68476D00AD447B /* SearchingPrefs.xib */; };
 		246AFBEB0A68501A00AD447B /* MonoclePreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246AFBEA0A68501A00AD447B /* MonoclePreferenceController.m */; };
 		246BEA9A1137475200D6BB79 /* BSJSONEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 246BEA901137475200D6BB79 /* BSJSONEncoder.h */; };
 		246BEA9B1137475200D6BB79 /* BSJSONEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BEA911137475200D6BB79 /* BSJSONEncoder.m */; };
@@ -100,7 +100,7 @@
 		24E2E0300A90A0D6006CC71B /* MonocleGreyTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2E02F0A90A0D6006CC71B /* MonocleGreyTextFieldCell.m */; };
 		24EE308F0B9E3A590059F453 /* MonocleEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE308D0B9E3A590059F453 /* MonocleEncoding.m */; };
 		24F4AD8B0B85103100044621 /* MonocleFieldEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4AD890B85103000044621 /* MonocleFieldEditor.m */; };
-		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072A0486CEB800E47090 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -172,7 +172,7 @@
 		246AFBD40A68473900AD447B /* remove_disabled.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = remove_disabled.tiff; sourceTree = "<group>"; };
 		246AFBD50A68473900AD447B /* remove_idle.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = remove_idle.tiff; sourceTree = "<group>"; };
 		246AFBD60A68473900AD447B /* remove_pressed.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = remove_pressed.tiff; sourceTree = "<group>"; };
-		246AFBDE0A68476D00AD447B /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SearchingPrefs.nib; sourceTree = "<group>"; };
+		246AFBDE0A68476D00AD447B /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xib; name = English; path = English.lproj/SearchingPrefs.xib; sourceTree = "<group>"; };
 		246AFBE90A68501A00AD447B /* MonoclePreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonoclePreferenceController.h; sourceTree = "<group>"; };
 		246AFBEA0A68501A00AD447B /* MonoclePreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonoclePreferenceController.m; sourceTree = "<group>"; };
 		246BEA901137475200D6BB79 /* BSJSONEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJSONEncoder.h; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 		24F4AD880B85103000044621 /* MonocleFieldEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleFieldEditor.h; sourceTree = "<group>"; };
 		24F4AD890B85103000044621 /* MonocleFieldEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleFieldEditor.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Monocle_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monocle_Prefix.pch; sourceTree = "<group>"; };
@@ -502,7 +502,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				248260F30C36F8AA0046688D /* json.js */,
 				242282320A83EBCD007ECB88 /* left.png */,
-				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.xib */,
 				24BC0F1F0A979369001FE0E9 /* Monocle.icns */,
 				240062FD0CFE1AB1009F92E6 /* PreferencesGeneral.tiff */,
 				246AFBD40A68473900AD447B /* remove_disabled.tiff */,
@@ -511,7 +511,7 @@
 				240063010CFE1AB1009F92E6 /* Remove.tiff */,
 				248260FF0C36FAC50046688D /* results.html */,
 				242282330A83EBCD007ECB88 /* right.png */,
-				246AFBDD0A68476D00AD447B /* SearchingPrefs.nib */,
+				246AFBDD0A68476D00AD447B /* SearchingPrefs.xib */,
 				24B5BCA20AEAD61800819B52 /* ShortcutRecorder.strings */,
 				2431293E0D22B235005DE6D9 /* stick.png */,
 			);
@@ -599,7 +599,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072A0486CEB800E47090 /* MainMenu.xib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				246AFBD70A68473900AD447B /* add_disabled.tiff in Resources */,
 				246AFBD80A68473900AD447B /* add_idle.tiff in Resources */,
@@ -608,7 +608,7 @@
 				246AFBDA0A68473900AD447B /* remove_disabled.tiff in Resources */,
 				246AFBDB0A68473900AD447B /* remove_idle.tiff in Resources */,
 				246AFBDC0A68473900AD447B /* remove_pressed.tiff in Resources */,
-				246AFBDF0A68476D00AD447B /* SearchingPrefs.nib in Resources */,
+				246AFBDF0A68476D00AD447B /* SearchingPrefs.xib in Resources */,
 				24D262FB0A8010C100B6CA39 /* Wikipedia.tiff in Resources */,
 				24D262FC0A8010C100B6CA39 /* Google.tiff in Resources */,
 				242282340A83EBCD007ECB88 /* left.png in Resources */,
@@ -708,12 +708,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		246AFBDD0A68476D00AD447B /* SearchingPrefs.nib */ = {
+		246AFBDD0A68476D00AD447B /* SearchingPrefs.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				246AFBDE0A68476D00AD447B /* English */,
 			);
-			name = SearchingPrefs.nib;
+			name = SearchingPrefs.xib;
 			sourceTree = "<group>";
 		};
 		24B5BCA20AEAD61800819B52 /* ShortcutRecorder.strings */ = {
@@ -724,12 +724,12 @@
 			name = ShortcutRecorder.strings;
 			sourceTree = "<group>";
 		};
-		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+		29B97318FDCFA39411CA2CEA /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				29B97319FDCFA39411CA2CEA /* English */,
 			);
-			name = MainMenu.nib;
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

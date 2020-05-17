@@ -236,16 +236,16 @@
 		24CD9F380D11F49300A317B5 /* MonocleBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonocleBarButton.m; sourceTree = "<group>"; };
 		24D262F90A8010C100B6CA39 /* Wikipedia.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Wikipedia.tiff; sourceTree = "<group>"; };
 		24D262FA0A8010C100B6CA39 /* Google.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Google.tiff; sourceTree = "<group>"; };
-		24D357EE0D37E979002FD803 /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = SOURCE_ROOT; };
-		24D357EF0D37E979002FD803 /* SRRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderControl.h; sourceTree = SOURCE_ROOT; };
-		24D357F00D37E979002FD803 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = SOURCE_ROOT; };
-		24D357F10D37E97A002FD803 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = SOURCE_ROOT; };
-		24D357F20D37E97A002FD803 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = SOURCE_ROOT; };
-		24D357F30D37E97A002FD803 /* SRRecorderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderCell.m; sourceTree = SOURCE_ROOT; };
-		24D357F40D37E97A002FD803 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = SOURCE_ROOT; };
-		24D357F50D37E97A002FD803 /* SRRecorderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderCell.h; sourceTree = SOURCE_ROOT; };
-		24D357F60D37E97A002FD803 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = SOURCE_ROOT; };
-		24D357F70D37E97A002FD803 /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRKeyCodeTransformer.m; sourceTree = SOURCE_ROOT; };
+		24D357EE0D37E979002FD803 /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
+		24D357EF0D37E979002FD803 /* SRRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderControl.h; sourceTree = "<group>"; };
+		24D357F00D37E979002FD803 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
+		24D357F10D37E97A002FD803 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
+		24D357F20D37E97A002FD803 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
+		24D357F30D37E97A002FD803 /* SRRecorderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderCell.m; sourceTree = "<group>"; };
+		24D357F40D37E97A002FD803 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
+		24D357F50D37E97A002FD803 /* SRRecorderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderCell.h; sourceTree = "<group>"; };
+		24D357F60D37E97A002FD803 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
+		24D357F70D37E97A002FD803 /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRKeyCodeTransformer.m; sourceTree = "<group>"; };
 		24E2E02E0A90A0D6006CC71B /* MonocleGreyTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MonocleGreyTextFieldCell.h; sourceTree = "<group>"; };
 		24E2E02F0A90A0D6006CC71B /* MonocleGreyTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MonocleGreyTextFieldCell.m; sourceTree = "<group>"; };
 		24EE308C0B9E3A590059F453 /* MonocleEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonocleEncoding.h; sourceTree = "<group>"; };
@@ -286,7 +286,7 @@
 				2422823A0A8405E2007ECB88 /* Discovery */,
 				246563231227166E003BA255 /* GTMNSString+HTML.h */,
 				246563241227166E003BA255 /* GTMNSString+HTML.m */,
-				24B5BACF0AEAC95300819B52 /* Hot keys and recorders */,
+				24B5BAAD0AEAC93300819B52 /* PTHotKey */,
 				2478F3BC0A72DABD0039E956 /* Looks */,
 				249C7FB70A44634A00769DCD /* MonocleController.h */,
 				249C7FB60A44634A00769DCD /* MonocleController.m */,
@@ -327,8 +327,9 @@
 				246BEA971137475200D6BB79 /* NSScanner+BSJSONAdditions.m */,
 				246BEA981137475200D6BB79 /* NSString+BSJSONAdditions.h */,
 				246BEA991137475200D6BB79 /* NSString+BSJSONAdditions.m */,
+				24B5BABB0AEAC94E00819B52 /* ShortcutRecorder */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
@@ -370,7 +371,7 @@
 				2422824A0A8405F3007ECB88 /* LoadController.h */,
 				2422824B0A8405F3007ECB88 /* LoadController.m */,
 			);
-			name = Discovery;
+			path = Discovery;
 			sourceTree = "<group>";
 		};
 		2478F3BC0A72DABD0039E956 /* Looks */ = {
@@ -399,10 +400,10 @@
 				24420F650B76892B00B1ED17 /* NSColor+ContrastingLabelExtensions.h */,
 				24420F720B76892B00B1ED17 /* NSColor+ContrastingLabelExtensions.m */,
 			);
-			name = Looks;
+			path = Looks;
 			sourceTree = "<group>";
 		};
-		24990B280B80E5DD005DC9C4 /* Default search engines */ = {
+		24990B280B80E5DD005DC9C4 /* DefaultSearchEngines */ = {
 			isa = PBXGroup;
 			children = (
 				24B7F5C4105C371A005DE273 /* Bing.tiff */,
@@ -411,10 +412,10 @@
 				24990B240B80E5D8005DC9C4 /* Yahoo.tiff */,
 				24B7F5C6105C3724005DE273 /* YouTube.tiff */,
 			);
-			name = "Default search engines";
+			path = DefaultSearchEngines;
 			sourceTree = "<group>";
 		};
-		24B5BAAD0AEAC93300819B52 /* HotKey */ = {
+		24B5BAAD0AEAC93300819B52 /* PTHotKey */ = {
 			isa = PBXGroup;
 			children = (
 				24B5BAB20AEAC93300819B52 /* PTHotKey.h */,
@@ -424,10 +425,10 @@
 				24B5BAB60AEAC93300819B52 /* PTKeyCombo.h */,
 				24B5BAB70AEAC93300819B52 /* PTKeyCombo.m */,
 			);
-			path = HotKey;
+			path = PTHotKey;
 			sourceTree = "<group>";
 		};
-		24B5BABB0AEAC94E00819B52 /* Shortcut Recorder */ = {
+		24B5BABB0AEAC94E00819B52 /* ShortcutRecorder */ = {
 			isa = PBXGroup;
 			children = (
 				24D357F00D37E979002FD803 /* SRCommon.h */,
@@ -441,17 +442,7 @@
 				24D357F20D37E97A002FD803 /* SRValidator.h */,
 				24D357F60D37E97A002FD803 /* SRValidator.m */,
 			);
-			name = "Shortcut Recorder";
-			path = Source;
-			sourceTree = "<group>";
-		};
-		24B5BACF0AEAC95300819B52 /* Hot keys and recorders */ = {
-			isa = PBXGroup;
-			children = (
-				24B5BAAD0AEAC93300819B52 /* HotKey */,
-				24B5BABB0AEAC94E00819B52 /* Shortcut Recorder */,
-			);
-			name = "Hot keys and recorders";
+			path = ShortcutRecorder;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* Monocle */ = {
@@ -490,7 +481,7 @@
 				2490D7A10D43F7390034B32F /* cog-menu.tiff */,
 				242282360A83EDC7007ECB88 /* cog.tiff */,
 				240063000CFE1AB1009F92E6 /* ColorPanel.tiff */,
-				24990B280B80E5DD005DC9C4 /* Default search engines */,
+				24990B280B80E5DD005DC9C4 /* DefaultSearchEngines */,
 				240212130B7D1CF200669728 /* engines-icon.png */,
 				243129590D22C2C4005DE6D9 /* frontier-up.png */,
 				2431295A0D22C2C4005DE6D9 /* frontier.png */,
@@ -515,7 +506,7 @@
 				24B5BCA20AEAD61800819B52 /* ShortcutRecorder.strings */,
 				2431293E0D22B235005DE6D9 /* stick.png */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -751,7 +742,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/WebKit.framework/Versions/A/Frameworks\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Monocle;
 				WRAPPER_EXTENSION = app;
@@ -773,7 +764,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/WebKit.framework/Versions/A/Frameworks\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Monocle;
 				WRAPPER_EXTENSION = app;

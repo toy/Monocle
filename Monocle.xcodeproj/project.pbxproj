@@ -104,6 +104,8 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		B2080B1F24DE3D4600081760 /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2080B1D24DE3D4600081760 /* PTKeyCodeTranslator.m */; };
+		B2080B2024DE3D4600081760 /* PTKeyCodeTranslator.h in Headers */ = {isa = PBXBuildFile; fileRef = B2080B1E24DE3D4600081760 /* PTKeyCodeTranslator.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -259,6 +261,8 @@
 		32CA4F630368D1EE00C91783 /* Monocle_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monocle_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Monocle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monocle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2080B1D24DE3D4600081760 /* PTKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKeyCodeTranslator.m; sourceTree = "<group>"; };
+		B2080B1E24DE3D4600081760 /* PTKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKeyCodeTranslator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +426,8 @@
 				24B5BAB30AEAC93300819B52 /* PTHotKey.m */,
 				24B5BAB40AEAC93300819B52 /* PTHotKeyCenter.h */,
 				24B5BAB50AEAC93300819B52 /* PTHotKeyCenter.m */,
+				B2080B1E24DE3D4600081760 /* PTKeyCodeTranslator.h */,
+				B2080B1D24DE3D4600081760 /* PTKeyCodeTranslator.m */,
 				24B5BAB60AEAC93300819B52 /* PTKeyCombo.h */,
 				24B5BAB70AEAC93300819B52 /* PTKeyCombo.m */,
 			);
@@ -530,6 +536,7 @@
 				246BEA9C1137475200D6BB79 /* NSArray+BSJSONAdditions.h in Headers */,
 				246BEA9E1137475200D6BB79 /* NSDictionary+BSJSONAdditions.h in Headers */,
 				246BEAA01137475200D6BB79 /* NSScanner+BSJSONAdditions.h in Headers */,
+				B2080B2024DE3D4600081760 /* PTKeyCodeTranslator.h in Headers */,
 				246BEAA21137475200D6BB79 /* NSString+BSJSONAdditions.h in Headers */,
 				246563251227166E003BA255 /* GTMNSString+HTML.h in Headers */,
 			);
@@ -640,6 +647,7 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				249C7FB80A44634A00769DCD /* MonocleController.m in Sources */,
+				B2080B1F24DE3D4600081760 /* PTKeyCodeTranslator.m in Sources */,
 				249C803F0A44711900769DCD /* DrawingExtras.m in Sources */,
 				249C81850A447FD100769DCD /* MonocleSearchWindow.m in Sources */,
 				246AFBEB0A68501A00AD447B /* MonoclePreferenceController.m in Sources */,

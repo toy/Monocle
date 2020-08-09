@@ -91,6 +91,23 @@
   return mAction;
 }
 
+- (NSUInteger)carbonHotKeyID {
+  return mCarbonHotKeyID;
+}
+
+- (void)setCarbonHotKeyID:(NSUInteger)hotKeyID;
+{ mCarbonHotKeyID = hotKeyID; }
+
+- (EventHotKeyRef)carbonEventHotKeyRef {
+  return mCarbonEventHotKeyRef;
+}
+
+- (void)setCarbonEventHotKeyRef:(EventHotKeyRef)hotKeyRef {
+  mCarbonEventHotKeyRef = hotKeyRef;
+}
+
+#pragma mark -
+
 - (void)invoke {
   [mTarget performSelector:mAction withObject:self];
 }

@@ -25,18 +25,6 @@ static NSString *dragTypeName = @"MonocleIntrisicTableReorderableType%d";
   return YES;  //!(cantSelectRow);
 }
 
-#ifndef NSINTEGER_DEFINED
-#if __LP64__ || NS_BUILD_32_LIKE_64
-typedef long NSInteger;
-typedef unsigned long NSUInteger;
-#else
-typedef int NSInteger;
-typedef unsigned int NSUInteger;
-#endif
-#define NSINTEGER_DEFINED 1
-#define NOTCOMPILEDONLEOPARD 1
-#endif
-
 - (BOOL)tableView:(NSTableView *)tableView
   shouldTrackCell:(NSCell *)cell
    forTableColumn:(NSTableColumn *)tableColumn
@@ -153,13 +141,13 @@ typedef unsigned int NSUInteger;
   postDragDelegate = del;
 }
 
-- (void)moveObjectsInArrangedObjectsFromIndexes:(NSIndexSet *)indexSet toIndex:(unsigned int)insertIndex {
+- (void)moveObjectsInArrangedObjectsFromIndexes:(NSIndexSet *)indexSet toIndex:(NSUInteger)insertIndex {
   NSArray *objects = [self arrangedObjects];  //[[self arrangedObjects] mutableCopy];
-  int index = [indexSet lastIndex];
+  NSUInteger index = [indexSet lastIndex];
 
-  int aboveInsertIndexCount = 0;
+  NSUInteger aboveInsertIndexCount = 0;
   id object;
-  int removeIndex;
+  NSUInteger removeIndex;
 
   while (NSNotFound != index) {
     if (index >= insertIndex) {
@@ -186,7 +174,7 @@ typedef unsigned int NSUInteger;
 }
 
 - (int)rowsAboveRow:(int)row inIndexSet:(NSIndexSet *)indexSet {
-  unsigned currentIndex = [indexSet firstIndex];
+  NSUInteger currentIndex = [indexSet firstIndex];
   int i = 0;
   while (currentIndex != NSNotFound) {
     if (currentIndex < row) {

@@ -23,6 +23,6 @@
 - (void)registerTableViewToReceiveDrags:(NSTableView *)tv;
 
 - (void)setPostDragDelegate:(id)del;
-- (void)moveObjectsInArrangedObjectsFromIndexes:(NSIndexSet *)indexSet toIndex:(unsigned int)insertIndex;
+- (void)moveObjectsInArrangedObjectsFromIndexes:(NSIndexSet *)indexSet toIndex:(NSUInteger)insertIndex;
 - (int)rowsAboveRow:(int)row inIndexSet:(NSIndexSet *)indexSet;
 @end

@@ -105,7 +105,7 @@ static MonocleController *sharedInstance = nil;
 
   [searchWindow setIgnoresMouseEvents:NO];
   [searchWindow setOpaque:NO];
-  [searchWindow setBackgroundColor:[[NSColor yellowColor] colorWithAlphaComponent:0.2]];  //[NSColor clearColor]]; //
+  [searchWindow setBackgroundColor:[[NSColor darkGrayColor] colorWithAlphaComponent:1]];  //[NSColor clearColor]]; //
   [searchWindow setContentView:searchView];
   [searchWindow setHasShadow:YES];
   [searchWindow setDelegate:self];

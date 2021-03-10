@@ -1003,27 +1003,27 @@ static NSObject *searchhelpUpdatingHandle = nil;
 
   text = [[aNotification object] stringValue];
 
-  NSMutableString *mutableText = [[text mutableCopy] autorelease];
-  [mutableText replaceOccurrencesOfString:@"\t"
-                               withString:@" "
-                                  options:NSLiteralSearch
-                                    range:NSMakeRange(0, [mutableText length])];
-  [mutableText replaceOccurrencesOfString:@"\r\n"
-                               withString:@" "
-                                  options:NSLiteralSearch
-                                    range:NSMakeRange(0, [mutableText length])];
-  [mutableText replaceOccurrencesOfString:@"\n"
-                               withString:@" "
-                                  options:NSLiteralSearch
-                                    range:NSMakeRange(0, [mutableText length])];
-  [mutableText replaceOccurrencesOfString:@"\r"
-                               withString:@" "
-                                  options:NSLiteralSearch
-                                    range:NSMakeRange(0, [mutableText length])];
-  if (![text isEqualToString:[mutableText description]]) {
-    text = [mutableText description];
-    [[aNotification object] setStringValue:text];
-  }
+//  NSMutableString *mutableText = [[text mutableCopy] autorelease];
+//  [mutableText replaceOccurrencesOfString:@"\t"
+//                               withString:@" "
+//                                  options:NSLiteralSearch
+//                                    range:NSMakeRange(0, [mutableText length])];
+//  [mutableText replaceOccurrencesOfString:@"\r\n"
+//                               withString:@" "
+//                                  options:NSLiteralSearch
+//                                    range:NSMakeRange(0, [mutableText length])];
+//  [mutableText replaceOccurrencesOfString:@"\n"
+//                               withString:@" "
+//                                  options:NSLiteralSearch
+//                                    range:NSMakeRange(0, [mutableText length])];
+//  [mutableText replaceOccurrencesOfString:@"\r"
+//                               withString:@" "
+//                                  options:NSLiteralSearch
+//                                    range:NSMakeRange(0, [mutableText length])];
+//  if (![text isEqualToString:[mutableText description]]) {
+//    text = [mutableText description];
+//    [[aNotification object] setStringValue:text];
+//  }
 
   NSString *oldCurrentSearchText = currentSearchText;
   currentSearchText = [text retain];

@@ -992,6 +992,10 @@ static NSObject *searchhelpUpdatingHandle = nil;
         engineIndex = i;
         [self didChangeValueForKey:@"selectedEngine"];
 
+        // Is there a better way to move caret while removing the prefix?
+        for (i = 0; i < [lookFor length]; i++) {
+          [[[aNotification object] currentEditor] moveLeft:nil];
+        }
         [[aNotification object] setStringValue:[text substringFromIndex:[lookFor length]]];
       }
     }

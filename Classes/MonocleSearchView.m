@@ -21,6 +21,8 @@
 #import "DrawingExtras.h"
 #import "CTGradient.h"
 
+#import "SRCommon.h"
+
 static NSString *MonocleSearchHelpDataUpdated = @"MonocleSearchHelpDataUpdated";
 
 @interface WebView (SetDrawsBackgroundWorkaround)

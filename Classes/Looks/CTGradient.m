@@ -849,6 +849,8 @@ void resolveHSV(float *color1, float *color2);
 void linearEvaluation(void *info, const float *in, float *out) {
   float position = *in;
 
+  return;
+
   if (*(CTGradientElement **)info == nil)  // if elementList is empty return clear color
   {
     out[0] = out[1] = out[2] = out[3] = 1;

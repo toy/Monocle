@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class MonocleController, MonocleReorderableArrayController, MonocleEngineArrayController, SRRecorderControl, SUUpdater;
+@class MonocleController, MonocleReorderableArrayController, MonocleEngineArrayController, SRRecorderControl;
 
 @interface MonoclePreferenceController : NSWindowController {
   IBOutlet NSView *enginesView;

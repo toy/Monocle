@@ -226,61 +226,25 @@ NSString *SRCharacterForKeyCodeAndCocoaFlags(signed short keyCode, unsigned int 
     if (err != noErr) return FailWithNaiveString;
   }
 
-  if (keyLayoutKind == kKLKCHRKind) {
-    UInt16 keyc = (UInt16)keyCode;
-    keyc |= (1 << 7);
-    if (cocoaFlags & NSAlternateKeyMask) keyc |= optionKey;
-    if (cocoaFlags & NSShiftKeyMask) keyc |= shiftKey;
+  EventModifiers modifiers = 0;
+  if (cocoaFlags & NSAlternateKeyMask) modifiers |= optionKey;
+  if (cocoaFlags & NSShiftKeyMask) modifiers |= shiftKey;
+  UniCharCount maxStringLength = 4, actualStringLength;
+  UniChar unicodeString[4];
+  err = UCKeyTranslate(uchrData,
+    (UInt16)keyCode,
+    kUCKeyActionDisplay,
+    modifiers,
+    LMGetKbdType(),
+    kUCKeyTranslateNoDeadKeysBit,
+    &deadKeyState,
+    maxStringLength,
+    &actualStringLength,
+    unicodeString);
+  CFStringRef temp = CFStringCreateWithCharacters(kCFAllocatorDefault, unicodeString, 1);
+  resultString = CFStringCreateMutableCopy(kCFAllocatorDefault, 0, temp);
+  if (temp) CFRelease(temp);
 
-    UInt32 charCode = KeyTranslate(KCHRData, keyc, &keyTranslateState);
-
-    charCode = CFSwapInt32BigToHost(charCode);
-    PUDNSLog(@"char code: %X", charCode);
-    UniChar chars[2];
-    CFIndex length = 0;
-
-    // Thanks to Peter Hosey for this particular piece of henious villainy.
-    union {
-      UInt32 uint32;
-      struct {  // No, we don't need to conditionally compile these with different orders since we swap the int.
-        char reserved1;
-        char char1;
-        char reserved2;
-        char char2;
-      } charStruct;
-    } charactersUnion;
-    charactersUnion.uint32 = charCode;
-    if (charactersUnion.charStruct.char1) {
-      chars[0] = charactersUnion.charStruct.char1;
-      chars[1] = charactersUnion.charStruct.char2;
-      length = 2;
-    } else {
-      chars[0] = charactersUnion.charStruct.char2;
-      length = 1;
-    }
-    CFStringRef temp = CFStringCreateWithCharacters(kCFAllocatorDefault, chars, length);
-    resultString = CFStringCreateMutableCopy(kCFAllocatorDefault, 0, temp);
-    if (temp) CFRelease(temp);
-  } else {
-    EventModifiers modifiers = 0;
-    if (cocoaFlags & NSAlternateKeyMask) modifiers |= optionKey;
-    if (cocoaFlags & NSShiftKeyMask) modifiers |= shiftKey;
-    UniCharCount maxStringLength = 4, actualStringLength;
-    UniChar unicodeString[4];
-    err = UCKeyTranslate(uchrData,
-      (UInt16)keyCode,
-      kUCKeyActionDisplay,
-      modifiers,
-      LMGetKbdType(),
-      kUCKeyTranslateNoDeadKeysBit,
-      &deadKeyState,
-      maxStringLength,
-      &actualStringLength,
-      unicodeString);
-    CFStringRef temp = CFStringCreateWithCharacters(kCFAllocatorDefault, unicodeString, 1);
-    resultString = CFStringCreateMutableCopy(kCFAllocatorDefault, 0, temp);
-    if (temp) CFRelease(temp);
-  }
   CFStringCapitalize(resultString, locale);
 
   PUDNSLog(@"character: -%@-", (NSString *)resultString);

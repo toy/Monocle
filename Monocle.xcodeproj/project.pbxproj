@@ -66,8 +66,6 @@
 		2490D7A20D43F7390034B32F /* cog-menu.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2490D7A10D43F7390034B32F /* cog-menu.tiff */; };
 		2490D7FB0D43FCA70034B32F /* cog-menu-small.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2490D7FA0D43FCA70034B32F /* cog-menu-small.tiff */; };
 		24990B260B80E5D8005DC9C4 /* Yahoo.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 24990B240B80E5D8005DC9C4 /* Yahoo.tiff */; };
-		24990B630B80E8B3005DC9C4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24990B4F0B80E8B3005DC9C4 /* Sparkle.framework */; };
-		24990B680B80E8D7005DC9C4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24990B4F0B80E8B3005DC9C4 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		249C7FB80A44634A00769DCD /* MonocleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249C7FB60A44634A00769DCD /* MonocleController.m */; };
 		249C803F0A44711900769DCD /* DrawingExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 249C803E0A44711900769DCD /* DrawingExtras.m */; };
 		249C81850A447FD100769DCD /* MonocleSearchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 249C81840A447FD100769DCD /* MonocleSearchWindow.m */; };
@@ -107,19 +105,6 @@
 		B2080B1F24DE3D4600081760 /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2080B1D24DE3D4600081760 /* PTKeyCodeTranslator.m */; };
 		B2080B2024DE3D4600081760 /* PTKeyCodeTranslator.h in Headers */ = {isa = PBXBuildFile; fileRef = B2080B1E24DE3D4600081760 /* PTKeyCodeTranslator.h */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		24990B640B80E8D3005DC9C4 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				24990B680B80E8D7005DC9C4 /* Sparkle.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -200,7 +185,6 @@
 		2490D7A10D43F7390034B32F /* cog-menu.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "cog-menu.tiff"; sourceTree = "<group>"; };
 		2490D7FA0D43FCA70034B32F /* cog-menu-small.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "cog-menu-small.tiff"; sourceTree = "<group>"; };
 		24990B240B80E5D8005DC9C4 /* Yahoo.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Yahoo.tiff; sourceTree = "<group>"; };
-		24990B4F0B80E8B3005DC9C4 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		249C7FB60A44634A00769DCD /* MonocleController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MonocleController.m; sourceTree = "<group>"; };
 		249C7FB70A44634A00769DCD /* MonocleController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MonocleController.h; sourceTree = "<group>"; };
 		249C803D0A44711900769DCD /* DrawingExtras.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DrawingExtras.h; sourceTree = "<group>"; };
@@ -273,7 +257,6 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				242282500A840616007ECB88 /* WebKit.framework in Frameworks */,
 				24B5BAF10AEACC5000819B52 /* Carbon.framework in Frameworks */,
-				24990B630B80E8B3005DC9C4 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +322,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				24990B4F0B80E8B3005DC9C4 /* Sparkle.framework */,
 				24B5BAF00AEACC5000819B52 /* Carbon.framework */,
 				2422824F0A840616007ECB88 /* WebKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -552,7 +534,6 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
-				24990B640B80E8D3005DC9C4 /* CopyFiles */,
 				2420E4F30D416AAF0059D146 /* Headers */,
 			);
 			buildRules = (

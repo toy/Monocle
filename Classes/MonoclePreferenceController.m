@@ -14,8 +14,6 @@
 #import "MonoclePreferences.h"
 #import "LoadController.h"
 
-#import "MonocleSuggestionProviding.h"
-
 #import "MonocleGlassIconDrawing.h"
 
 #import "MonocleButtonBarStuff.h"
@@ -926,87 +924,7 @@ float ToolbarHeightForWindow(NSWindow *window) {
 }
 
 - (NSMutableArray *)constructSearchHelpers {
-  //	NSLog(@"construct search helpers");
-
-  NSDictionary *providers = [MonocleSuggestionProvider providers];
-
-  //	NSLog(@"providers: %@", providers);
-
-  NSArray *order = [MonoclePreferences arrayForKey:@"SearchHelpProvidersOrder"
-                                         orDefault:[MonocleSuggestionProvider providerIdentifiers]];
-  NSArray *enabledProviders = [MonoclePreferences arrayForKey:@"SearchHelpProvidersEnabled"
-                                                    orDefault:[MonocleSuggestionProvider providerIdentifiers]];
-
-  NSMutableDictionary *byID = [NSMutableDictionary dictionary];
-
-  NSEnumerator *rEnumerator = [[providers objectForKey:@"r"] objectEnumerator];
-  id<MonocleResultProviding> rs;
-  NSDictionary *dict;
   NSMutableArray *provs = [[NSMutableArray array] retain];
-  while (rs = [rEnumerator nextObject]) {
-    MonocleProviderInfo info = [rs resultsProviderInfo];
-    NSString *identifier = [rs resultsSourceIdentifier];
-    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:info.icon,
-                                @"icon",
-                                info.label,
-                                @"name",
-                                [NSNumber numberWithBool:[enabledProviders containsObject:identifier]],
-                                @"isChecked",
-                                [rs resultsSource],
-                                @"source",
-                                identifier,
-                                @"identifier",
-                                nil];
-    [byID setObject:dict forKey:identifier];
-    //		NSLog(@"added results entry for %@, %@", identifier, dict);
-    //		[provs addObject:dict];
-  }
-
-  NSEnumerator *sEnumerator = [[providers objectForKey:@"s"] objectEnumerator];
-  id<MonocleSuggestionProviding> ss;
-  while (ss = [sEnumerator nextObject]) {
-    MonocleProviderInfo info = [ss suggestionsProviderInfo];
-    NSString *identifier = [ss suggestionsSourceIdentifier];
-    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:info.icon,
-                                @"icon",
-                                info.label,
-                                @"name",
-                                [NSNumber numberWithBool:[enabledProviders containsObject:identifier]],
-                                @"isChecked",
-                                [ss suggestionsSource],
-                                @"source",
-                                identifier,
-                                @"identifier",
-                                nil];
-    [byID setObject:dict forKey:identifier];
-    //		[provs addObject:dict];
-  }
-
-  NSEnumerator *inOrderEnumerator = [order objectEnumerator];
-  NSString *identifier;
-  while (identifier = [inOrderEnumerator nextObject]) {
-    NSDictionary *prov = [byID objectForKey:identifier];
-    if (prov) {
-      [provs addObject:prov];
-      [byID removeObjectForKey:identifier];
-    }
-  }
-  NSArray *remainingKeys = [byID allKeys];
-  //	NSLog(@"remaining keys: %@", remainingKeys);
-  if ([remainingKeys count] > 0) {
-    NSEnumerator *remainingEnumerator = [remainingKeys objectEnumerator];
-    NSString *remainingKey;
-    while (remainingKey = [remainingEnumerator nextObject]) {
-      //			NSLog(@"key: %@", remainingKey);
-      NSDictionary *prov = [byID objectForKey:remainingKey];
-      //			NSLog(@"prov: %@", prov);
-      if (prov) {
-        [provs addObject:prov];
-      }
-    }
-  }
-
-  //	NSLog(@"provs: %@", provs);
 
   return [provs autorelease];
 }
@@ -1029,96 +947,7 @@ float ToolbarHeightForWindow(NSWindow *window) {
 }
 
 - (NSMutableArray *)constructSearchHelpersForEngine:(id)engine {
-  id useSpecificSetup = [engine valueForKey:@"searchHelpUseSpecificSetup"];
-  //	NSLog(@"construct search helpers for engines; use specific setup = %@", useSpecificSetup);
-  if (useSpecificSetup == nil || [(NSNumber *)useSpecificSetup boolValue] == NO) {
-    return [self constructSearchHelpers];
-  }
-
-  NSDictionary *providers = [MonocleSuggestionProvider providers];
-
-  //	NSLog(@"providers: %@", providers);
-
-  NSArray *defaultOrder = [MonoclePreferences arrayForKey:@"SearchHelpProvidersOrder"
-                                                orDefault:[MonocleSuggestionProvider providerIdentifiers]];
-  NSArray *defaultProviders = [MonoclePreferences arrayForKey:@"SearchHelpProvidersEnabled"
-                                                    orDefault:[MonocleSuggestionProvider providerIdentifiers]];
-
-  NSArray *orderFromEngine = [engine valueForKey:@"searchHelpProvidersOrder"];
-  NSArray *order = (orderFromEngine == nil ? defaultOrder : orderFromEngine);
-  NSArray *enabledProvidersFromEngine = [engine valueForKey:@"searchHelpProvidersEnabled"];
-  NSArray *enabledProviders = (enabledProvidersFromEngine == nil ? defaultProviders : enabledProvidersFromEngine);
-
-  NSMutableDictionary *byID = [NSMutableDictionary dictionary];
-
-  NSEnumerator *rEnumerator = [[providers objectForKey:@"r"] objectEnumerator];
-  id<MonocleResultProviding> rs;
-  NSDictionary *dict;
   NSMutableArray *provs = [[NSMutableArray array] retain];
-  while (rs = [rEnumerator nextObject]) {
-    MonocleProviderInfo info = [rs resultsProviderInfo];
-    NSString *identifier = [rs resultsSourceIdentifier];
-    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:info.icon,
-                                @"icon",
-                                info.label,
-                                @"name",
-                                [NSNumber numberWithBool:[enabledProviders containsObject:identifier]],
-                                @"isChecked",
-                                [rs resultsSource],
-                                @"source",
-                                identifier,
-                                @"identifier",
-                                nil];
-    [byID setObject:dict forKey:identifier];
-    //		NSLog(@"added results entry for %@, %@", identifier, dict);
-    //		[provs addObject:dict];
-  }
-
-  NSEnumerator *sEnumerator = [[providers objectForKey:@"s"] objectEnumerator];
-  id<MonocleSuggestionProviding> ss;
-  while (ss = [sEnumerator nextObject]) {
-    MonocleProviderInfo info = [ss suggestionsProviderInfo];
-    NSString *identifier = [ss suggestionsSourceIdentifier];
-    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:info.icon,
-                                @"icon",
-                                info.label,
-                                @"name",
-                                [NSNumber numberWithBool:[enabledProviders containsObject:identifier]],
-                                @"isChecked",
-                                [ss suggestionsSource],
-                                @"source",
-                                identifier,
-                                @"identifier",
-                                nil];
-    [byID setObject:dict forKey:identifier];
-    //		[provs addObject:dict];
-  }
-
-  NSEnumerator *inOrderEnumerator = [order objectEnumerator];
-  NSString *identifier;
-  while (identifier = [inOrderEnumerator nextObject]) {
-    NSDictionary *prov = [byID objectForKey:identifier];
-    if (prov) {
-      [provs addObject:prov];
-      [byID removeObjectForKey:identifier];
-    }
-  }
-  NSArray *remainingKeys = [byID allKeys];
-  //	NSLog(@"remaining keys: %@", remainingKeys);
-  if ([remainingKeys count] > 0) {
-    NSEnumerator *remainingEnumerator = [remainingKeys objectEnumerator];
-    NSString *remainingKey;
-    while (remainingKey = [remainingEnumerator nextObject]) {
-      //			NSLog(@"key: %@", remainingKey);
-      NSDictionary *prov = [byID objectForKey:remainingKey];
-      //			NSLog(@"prov: %@", prov);
-      if (prov) {
-        [provs addObject:prov];
-      }
-    }
-  }
-
-  //	NSLog(@"provs: %@", provs);
 
   return [provs autorelease];
 }

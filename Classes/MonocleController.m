@@ -6,7 +6,6 @@
 #import "MonocleFieldEditor.h"
 #import "MonocleWashDrawing.h"
 #import "MonoclePreferences.h"
-#import "MonocleSuggestionProviding.h"
 
 #import "SRCommon.h"
 #import "SRRecorderControl.h"
@@ -153,50 +152,9 @@ static MonocleController *sharedInstance = nil;
   return [fm fileExistsAtPath:path isDirectory:&isDir] && isDir;
 }
 
-- (void)registerExtraSuggestionProviders {
-  NSString *home = [@"~" stringByExpandingTildeInPath];
-  NSString *library = [home stringByAppendingPathComponent:@"Library"];
-  NSString *appSupport = [library stringByAppendingPathComponent:@"Application Support"];
-  if (![self folderExistsAtPath:appSupport]) return;
-  NSString *monocleAppSupport = [appSupport stringByAppendingPathComponent:@"Monocle"];
-  if (![self folderExistsAtPath:monocleAppSupport]) {
-    [[NSFileManager defaultManager] createDirectoryAtPath:monocleAppSupport attributes:nil];
-  }
-  NSArray *contents = [[NSFileManager defaultManager] directoryContentsAtPath:monocleAppSupport];
-  NSEnumerator *contentsEnumerator = [contents objectEnumerator];
-  NSString *fileName;
-  //	NSLog(@"%d files in App Support folder", [contents count]);
-  while (fileName = [contentsEnumerator nextObject]) {
-    //		NSLog(@"candidate: %@", fileName);
-    if ([[fileName pathExtension] isEqualToString:@"monoclePlugin"]) {
-      if ([fileName hasPrefix:@"."]) {
-        NSLog(
-          @"INFO! A hidden Monocle plugin, '%@', was found; it was not loaded. Make it visible (remove the dot prefix) to load it.",
-          fileName);
-        continue;
-      }
-      NSString *absToFile = [monocleAppSupport stringByAppendingPathComponent:fileName];
-      NSBundle *pluginBundle = [NSBundle bundleWithPath:absToFile];
-      [pluginBundle load];
-      NSString *princClass = [[pluginBundle infoDictionary] objectForKey:@"NSPrincipalClass"];
-      if ([princClass isEqualToString:@""]) continue;
-      Class c = NSClassFromString(princClass);
-      if (c == Nil) {
-        NSLog(@"ERROR! NSPrincipalClass in plugin specifies nonexisting class: %@", princClass);
-      } else {
-        //				NSLog(@"Loaded class: %@", princClass);
-        [c self];
-        NSLog(@"INFO! Initialized plugin %@", [fileName stringByDeletingPathExtension]);
-      }
-    }
-  }
-}
-
 - (void)doReallyEarlyStuff {
   //	[MonocleWebKitGenericSiteIconAcquiring startAcquiringImage];
   [self registerDefaultSearchEngines];
-  [MonocleSuggestionProvider initialize];
-  [self registerExtraSuggestionProviders];
 }
 
 - (void)registerDefaultSearchEngines {

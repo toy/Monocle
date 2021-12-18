@@ -9,7 +9,6 @@
 #import "MonocleSearchView.h"
 #import "MonocleSearchField.h"
 #import "MonocleController.h"
-#import "MonocleSuggestionProviding.h"
 #import "MonocleWashDrawing.h"
 #import "MonoclePreferences.h"
 
@@ -811,22 +810,6 @@ static NSObject *searchhelpUpdatingHandle = nil;
   if ([[[self searchText] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
         isEqualTo:@""])
     return;
-  //	NSLog(@"do search... text: %@", [self searchText]);
-
-  //	NSString *suggstr = [self searchText];
-  /*	[[[self window] fieldEditor:YES forObject:textField] complete:self];
-    MonocleSuggestionProviderFromSpellChecker *spsc = [[MonocleSuggestionProviderFromSpellChecker alloc] init];
-    NSLog(@" - spell checker: %@", [spsc suggestionsForString:suggstr]);*/
-  /*	MonocleSuggestionProviderFromGoogle *spg = [[MonocleSuggestionProviderFromGoogle alloc] init];
-    NSLog(@" - Google: %@", [spg suggestionsForString:suggstr]);
-    MonocleSuggestionProviderFromYahoo *spy = [[MonocleSuggestionProviderFromYahoo alloc] init];
-    NSLog(@" - Yahoo!: %@", [spy suggestionsForString:suggstr]);
-
-    suggstr = @"1\"3'3";
-    NSLog(@"suggestions for %@", suggstr);
-    NSLog(@" - spell checker: %@", [spsc suggestionsForString:suggstr]);
-    NSLog(@" - Google: %@", [spg suggestionsForString:suggstr]);
-    NSLog(@" - Yahoo!: %@", [spy suggestionsForString:suggstr]);*/
 
   [self performSearch];
 }
@@ -1088,20 +1071,9 @@ static NSObject *searchhelpUpdatingHandle = nil;
       [draftSearchhelpResults setObject:res forKey:prov];
       //			NSLog(@"[%d] value: %@", job, res);
 
-      NSArray *ordered = [MonocleSuggestionProvider orderedEnabledIdentifiersForEngine:[self selectedEngine]];
-
       NSMutableArray *results = [NSMutableArray array];
 
       //			NSLog(@"[%d] assembling list (%@)", job, [draftSearchhelpResults allKeys]);
-
-      NSEnumerator *orderedEnumerator = [ordered objectEnumerator];
-      NSString *orderedId;
-      while (orderedId = [orderedEnumerator nextObject]) {
-        id ressug = [draftSearchhelpResults objectForKey:orderedId];
-        if (ressug) {
-          [results addObject:ressug];
-        }
-      }
 
       [currentSearchhelpResults autorelease];
       currentSearchhelpResults = [results copy];
@@ -1121,11 +1093,6 @@ static NSObject *searchhelpUpdatingHandle = nil;
     [draftSearchhelpIsForString release];
     draftSearchhelpIsForString = [string copy];
     [draftSearchhelpResults removeAllObjects];
-    [MonocleSuggestionProvider combinedResultsSuggestionsForString:string
-                                                            forJob:currentSearchhelpJob
-                                                       usingEngine:[self selectedEngine]
-                                                          delegate:self];
-
   }/*
 	{
 		[searchhelpResults release];
@@ -1219,13 +1186,8 @@ static NSObject *searchhelpUpdatingHandle = nil;
     [[[textField window] fieldEditor:NO forObject:textField] setSelectedRange:NSMakeRange([sugg length], 0)];
   } else {
     //		NSLog(@"supposed to navigate to site: %@", selectedSearchHelp);
-    BOOL succeeded = [MonocleSuggestionProvider openResult:[selectedSearchHelp objectForKey:@"url"]
-                               usingProviderWithIdentifier:[selectedSearchHelp objectForKey:@"providerIdentifier"]];
     //		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[selectedSearchHelp objectForKey:@"url"]]];
-    if (succeeded) {
-      [self searchLaunched];
-    }
-    return succeeded;
+    return NO;
     //[self setSearchText:@""];
   }
   return YES;
